@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1500"
+   height="650"
+   version="1.1"
+   id="svg436"
+   sodipodi:docname="header_ties.svg"
+   inkscape:version="1.1 (ce6663b3b7, 2021-05-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview438"
+     pagecolor="#363636"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="false"
+     showgrid="false"
+     inkscape:zoom="0.49991492"
+     inkscape:cx="574.09769"
+     inkscape:cy="356.06059"
+     inkscape:window-width="1884"
+     inkscape:window-height="1037"
+     inkscape:window-x="1956"
+     inkscape:window-y="1085"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg436" />
+  <title
+     id="title2">Blank map of the United States, territories not included</title>
+  <defs
+     id="defs6">
+    <style
+       type="text/css"
+       id="style4">
+.state {fill:#D0D0D0}                        /* default color for all states not specified below */
+.borders {stroke:#FFFFFF; stroke-width:1}    /* color and width of borders between states */
+.dccircle {display:yes}                      /* set display to yes to show the circle for the District of Columbia, or none to hide it */
+.separator1 {stroke:#B0B0B0; stroke-width:2} /* color and width of lines around Alaska and Hawaii */
+
+/* Individual states can be colored as follows:
+.ks,.mt,.pa {fill:#0000FF}
+.ca,.de {fill:#FF0000}
+In this example, Kansas, Montana and Pennsylvania are colored blue, and California and Delaware are colored red.
+Place this code in the empty space below. */
+
+/* REPLACE */
+
+</style>
+  </defs>
+  <text
+     xml:space="preserve"
+     style="font-size:92.342px;line-height:1.25;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:2.30854"
+     x="451.27429"
+     y="168.41159"
+     id="text1799"><tspan
+       sodipodi:role="line"
+       x="451.27429"
+       y="168.41159"
+       id="tspan1801"
+       style="fill:#ffffff;stroke-width:2.30854">Every Possible</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:50.4597px;line-height:1.25;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:1.2615"
+     x="750.52979"
+     y="472.82086"
+     id="text1799-7"><tspan
+       sodipodi:role="line"
+       x="750.52979"
+       y="472.82086"
+       style="text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:1.2615"
+       id="tspan5957">Safe states (depicted in greyed out red or blue) are not considered.</tspan><tspan
+       sodipodi:role="line"
+       x="750.52979"
+       y="535.89551"
+       style="text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:1.2615"
+       id="tspan4075">Maps in rough order of plausibility.</tspan><tspan
+       sodipodi:role="line"
+       x="750.52979"
+       y="598.97009"
+       style="text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:1.2615"
+       id="tspan1142">by Kavi Gupta: @notkavi</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:50.4597px;line-height:1.25;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:1.2615"
+     x="467.77948"
+     y="533.5614"
+     id="text1799-7-3"><tspan
+       sodipodi:role="line"
+       x="467.77948"
+       y="533.5614"
+       id="tspan1801-5-6"
+       style="fill:#ffffff;stroke-width:1.2615" /></text>
+  <text
+     xml:space="preserve"
+     style="font-size:154.146px;line-height:1.25;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:3.85368"
+     x="34.147339"
+     y="347.18658"
+     id="text1799-3"><tspan
+       sodipodi:role="line"
+       x="34.147339"
+       y="347.18658"
+       id="tspan1940"
+       style="font-weight:bold;fill:#ffffff;stroke-width:3.85368">Electoral College Tie</tspan></text>
+  <metadata
+     id="metadata4394">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Blank map of the United States, territories not included</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
