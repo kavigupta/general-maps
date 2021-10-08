@@ -26,15 +26,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="3.2035073"
-     inkscape:cx="195.5669"
-     inkscape:cy="52.5986"
-     inkscape:window-width="3768"
-     inkscape:window-height="2096"
+     inkscape:zoom="1.6017537"
+     inkscape:cx="239.42508"
+     inkscape:cy="58.685679"
+     inkscape:window-width="1884"
+     inkscape:window-height="1037"
      inkscape:window-x="72"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="g5526" />
+     inkscape:window-y="1086"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
   <defs
      id="defs2">
     <inkscape:perspective
@@ -128,7 +128,7 @@
        transform="translate(-42.650955,134.97082)">
       <g
          id="g4844"
-         transform="matrix(0.01754158,0,0,0.01666173,-8.079147,-59.494078)">
+         transform="matrix(0.01754147,0,0,0.01666163,-8.0791471,-59.494078)">
         <rect
            width="7410"
            height="3900"
@@ -136,7 +136,7 @@
            id="rect4789"
            x="0"
            y="0"
-           style="fill:#a02828;fill-opacity:1;stroke:#800000" />
+           style="fill:#bf5f5f;fill-opacity:1;stroke:#800000" />
         <path
            d="m 0,450 h 7410 m 0,600 H 0 m 0,600 h 7410 m 0,600 H 0 m 0,600 h 7410 m 0,600 H 0"
            stroke="#ffffff"
@@ -145,9 +145,9 @@
       </g>
       <g
          id="g5372"
-         transform="matrix(0.77016035,0,0,0.77016035,-33.259402,-31.531425)">
+         transform="matrix(0.77016035,0,0,0.77016035,-33.25981,-30.8552)">
         <circle
-           style="fill:#202080;fill-opacity:1;stroke:none;stroke-width:1.21436"
+           style="fill:#2a2a80;fill-opacity:1;stroke:none;stroke-width:1.21436"
            id="path3223"
            cx="117.08186"
            cy="5.878932"
