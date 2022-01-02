@@ -30,5 +30,5 @@ result = dict(
     ],
 )
 
-with open("out.geojson", "w") as f:
+with open("median-centroids.geojson", "w") as f:
     json.dump(result, f)
