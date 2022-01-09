@@ -1,0 +1,175 @@
+import csv
+import re
+import sys
+import tempfile
+
+import pandas as pd
+import numpy as np
+
+import sklearn.linear_model
+
+sys.path.insert(0, "/home/kavi/2024-bot/mapmaker/")
+
+from mapmaker.data import data_by_year
+from mapmaker.colors import Profile, get_color
+from mapmaker.stitch_map import produce_entire_map
+from mapmaker.mapper import USAPresidencyBaseMap
+
+
+p = Profile(
+    symbol=dict(dem="L", gop="T"),
+    hue=dict(dem=2 / 3, gop=1),
+    bot_name="bot_2024",
+    credit="DEFAULT_CREDIT",
+    extra_ec=dict(gop=1),
+)
+
+
+def load_file(path):
+    with open("data/" + path, "r") as f:
+        _, _, _, _, header, *rest, _ = list(csv.reader(f))
+    result = pd.DataFrame(rest, columns=header)
+    f = tempfile.mktemp()
+    result.to_csv(f, index=False)
+    result = pd.read_csv(f)
+    result = result[result.ConstituencyName == result.ConstituencyName]
+    return result.set_index("ConstituencyName")
+
+
+def load_all_uk():
+    britain_race = (
+        load_file("race.csv")[["CON%W", "CON%AS", "CON%BB"]].rename(
+            columns={"CON%W": "white %", "CON%AS": "asian %", "CON%BB": "black %"}
+        )
+        / 100
+    )
+    britain_race["hispanic %"] = 0
+    britain_edu = (
+        load_file("education.csv")[["CON%Lev_4_qual"]].rename(
+            columns={"CON%Lev_4_qual": "bachelor %"}
+        )
+        / 100
+    )
+    britain_religion = load_file("religion.csv")[["CON%Rel_nots", "CON%No_rel"]]
+    britain_religion = (
+        britain_religion.applymap(lambda x: float(x) if x != "..." else 5) / 100
+    )
+    britain_religion["total_religious"] = 1 - sum(
+        britain_religion[k] for k in britain_religion
+    )
+    britain_religion = britain_religion[["total_religious"]]
+
+    britain = britain_race.join(britain_edu).join(britain_religion).fillna(0.9)
+    return britain
+
+
+def predict_uk(p_w, adjust_to_normal):
+    britain = load_all_uk()
+    britain["predictions"] = np.tanh(p_w.predict(np.array(britain)) + adjust_to_normal)
+    britain["colors"] = p.place_on_county_colorscale(
+        {
+            "dem": 0.5 * (1 + britain["predictions"]),
+            "gop": 0.5 * (1 - britain["predictions"]),
+        }
+    )
+    return britain
+
+
+def read_uk_map(britain):
+    with open("data/2019UKElectionMap.svg") as f:
+        map = f.read()
+    backmap = {}
+    for name in britain.index:
+        original_name = name
+        name = {
+            "Richmond (Yorks)": "Richmond_Yorks",
+            "Weston-Super-Mare": "Weston-super-Mare",
+            "Carmarthen West and Pembrokeshire South": "Carmarthen_West_and_South_Pembrokeshire",
+            "Carmarthen East and Dinefwr": "Carmarthen_East_And_Dinefwr",
+            #         "Penrith and The Border": "Penrith_and_the_Border",
+            #         "South Holland and The Deepings": "South_Holland_and_the_Deepings",
+        }.get(name, name)
+        name = (
+            name.replace(" ", "_")
+            .replace(",", "_")
+            .replace("_The", "_the")
+            .replace("ô", "o")
+        )
+        backmap[name] = original_name
+        assert f'name="{name}"' in map
+    return map, backmap
+
+
+def draw_britain(britain, out):
+    map, backmap = read_uk_map(britain)
+    out_lines = []
+    lines = map.split("\n")
+    for line in lines:
+        if not line.strip().startswith("<path"):
+            out_lines.append(line)
+            continue
+        name = re.search('name="([^"]+)"', line).group(1)
+        name = name.split("-")
+        if name[-1] == "1":
+            name = name[:-1]
+        name = "-".join(name)
+        assert name in backmap, name
+        color = "#%02x%02x%02x" % tuple(
+            get_color(p.county_colorscale, britain.colors[backmap[name]])
+        )
+        line = re.sub('class="([^"]+)"', 'class="seat"', line)
+        line = re.sub('style="', f'style="fill:{color};', line)
+        out_lines.append(line)
+    with open(out, "w") as f:
+        res = "\n".join(out_lines)
+        res = res.replace("black", "white")
+        res = res.replace("#000000", "#ffffff")
+        f.write(res)
+
+
+def main():
+    df = data_by_year()[2020]
+    usa_stats = df[
+        ["white %", "asian %", "black %", "hispanic %", "bachelor %", "total_religious"]
+    ]
+
+    p_w = sklearn.linear_model.Ridge(alpha=1e-1).fit(
+        np.array(usa_stats),
+        np.arctanh(np.array(df.dem_margin)),
+        sample_weight=np.array(df.CVAP).astype(np.float64),
+    )
+    t_w = sklearn.linear_model.Ridge(alpha=1e-1).fit(
+        np.array(usa_stats),
+        np.arctanh(np.minimum(df.turnout, 0.99)),
+        sample_weight=np.array(df.CVAP).astype(np.float64),
+    )
+    _ = produce_entire_map(
+        df,
+        title="Pred(race, edu, relig)",
+        out_path="images/usa.svg",
+        dem_margin=np.tanh(p_w.predict(np.array(usa_stats))),
+        turnout=np.tanh(t_w.predict(np.array(usa_stats))),
+        basemap=USAPresidencyBaseMap(),
+        year=2020,
+        use_png=False,
+    )
+    britain_normal = predict_uk(p_w, 0)
+    bot, top = 0, 10
+    while True:
+        k = (bot + top) / 2
+        britain_calibrated = predict_uk(p_w, k)
+        amount = (britain_calibrated.predictions < 0).sum()
+        print(bot, top, amount)
+        if amount < 365:
+            top = k
+        elif amount > 365:
+            bot = k
+        else:
+            break
+    draw_britain(britain_normal, "images/normal.svg")
+    draw_britain(britain_calibrated, "images/calibrated.svg")
+    
+    print((britain_normal.predictions < 0).sum())
+
+if __name__ == "__main__":
+    main()
