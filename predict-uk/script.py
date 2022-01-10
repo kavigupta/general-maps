@@ -318,10 +318,10 @@ def predict_uk_with_usa():
 
     republican = (britain_normal.predictions < 0).sum()
     democrat = 650 - republican
-    with open("template.svg") as f:
+    with open("template_predicted_from_usa.svg") as f:
         svg = f.read()
     svg = svg.replace("$D", str(democrat)).replace("$R", str(republican))
-    with open("final.svg", "w") as f:
+    with open("final_predicted_from_usa.svg", "w") as f:
         f.write(svg)
 
 
