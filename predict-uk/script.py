@@ -8,6 +8,9 @@ import electiondata as e
 from permacache import permacache
 import pandas as pd
 import numpy as np
+import torch
+import torch.nn as nn
+import tqdm.auto as tqdm
 
 import sklearn.linear_model
 
@@ -19,7 +22,7 @@ from mapmaker.stitch_map import produce_entire_map
 from mapmaker.mapper import USAPresidencyBaseMap
 
 
-p = Profile(
+usa_profile = Profile(
     symbol=dict(dem="L", gop="T"),
     hue=dict(dem=2 / 3, gop=1),
     bot_name="bot_2024",
@@ -91,12 +94,6 @@ def load_all_uk():
 def predict_uk(p_w, adjust_to_normal):
     britain = load_all_uk()
     britain["predictions"] = np.tanh(p_w.predict(np.array(britain)) + adjust_to_normal)
-    britain["colors"] = p.place_on_county_colorscale(
-        {
-            "dem": 0.5 * (1 + britain["predictions"]),
-            "gop": 0.5 * (1 - britain["predictions"]),
-        }
-    )
     return britain
 
 
@@ -126,6 +123,14 @@ def read_uk_map(britain):
 
 
 def draw_britain(britain, out):
+    britain = britain.copy()
+    britain["colors"] = usa_profile.place_on_county_colorscale(
+        {
+            "dem": 0.5 * (1 + britain["predictions"]),
+            "gop": 0.5 * (1 - britain["predictions"]),
+        }
+    )
+
     map, backmap = read_uk_map(britain)
     out_lines = []
     lines = map.split("\n")
@@ -140,7 +145,7 @@ def draw_britain(britain, out):
         name = "-".join(name)
         assert name in backmap, name
         color = "#%02x%02x%02x" % tuple(
-            get_color(p.county_colorscale, britain.colors[backmap[name]])
+            get_color(usa_profile.county_colorscale, britain.colors[backmap[name]])
         )
         line = re.sub('class="([^"]+)"', 'class="seat"', line)
         line = re.sub('style="', f'style="fill:{color};', line)
@@ -196,7 +201,75 @@ def usa_data(version="usa_data_7"):
     return df_whole, usa_stats, dem_margin, turnout, population
 
 
-def main():
+def process_england_wiki_electoral(table):
+    table = table.copy()
+    table.columns = [re.match(r"([^\[]+).*", x[1]).group(1) for x in table.columns]
+    table = table[table.Constituency != "Total for all constituencies"]
+    table = table.fillna(0)
+    return table
+
+
+def england_2019_results():
+    tables = pd.read_html(
+        "https://en.wikipedia.org/wiki/Results_of_the_2019_United_Kingdom_general_election"
+    )
+    tables = [x for x in tables if "Constituency" in str(x)]
+    tables = [process_england_wiki_electoral(table) for table in tables]
+    england = max(tables, key=lambda x: x.shape[0])
+    england = england[["Constituency", "Con", "Lab", "LD", "Total"]].copy()
+    england = england.set_index("Constituency")
+    england = england.applymap(int)
+    total = england.pop("Total")
+    for col in england:
+        england[col] /= total
+    england.index = [
+        (
+            x.replace("Birmingham ", "Birmingham, ")
+            .replace("Brighton ", "Brighton, ")
+            .replace("Liverpool ", "Liverpool, ")
+            .replace("Plymouth ", "Plymouth, ")
+            .replace("Ealing Southall", "Ealing, Southall")
+            .replace("Enfield Southgate", "Enfield, Southgate")
+            .replace("Lewisham Deptford", "Lewisham, Deptford")
+            .replace("Manchester Gorton", "Manchester, Gorton")
+            .replace("Manchester Withington", "Manchester, Withington")
+            .replace(
+                "Sheffield Brightside and Hillsborough",
+                "Sheffield, Brightside and Hillsborough",
+            )
+            .replace("Sheffield Hallam", "Sheffield, Hallam")
+            .replace("Sheffield Heeley", "Sheffield, Heeley")
+            .replace("Southampton Itchen", "Southampton, Itchen")
+            .replace("Southampton Test", "Southampton, Test")
+            .replace("Weston-super-Mare", "Weston-Super-Mare")
+        )
+        for x in england.index
+    ]
+    england["Other"] = 1 - sum(england[c] for c in england)
+    return england.copy()
+
+
+@permacache("uk-prediction/train_england_model")
+def train_england_model():
+    uk = load_all_uk()
+    england = england_2019_results()
+    x = np.array(uk.loc[england.index])
+    y = np.array(england)
+
+    xt, yt = torch.tensor(x).float(), torch.tensor(y).float()
+    model = nn.Sequential(nn.Linear(x.shape[1], y.shape[1]), nn.Softmax(-1))
+    opt = torch.optim.Adam(model.parameters(), lr=2e-2)
+    for i in tqdm.trange(10 ** 5):
+        opt.zero_grad()
+        loss = ((model(xt) - yt) ** 2).mean()
+        loss.backward()
+        if i % 1000 == 0:
+            print(i, loss.item())
+        opt.step()
+    return model
+
+
+def predict_uk_with_usa():
 
     df_whole, usa_stats, dem_margin, turnout, population = usa_data()
 
@@ -248,4 +321,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    predict_uk_with_usa()
