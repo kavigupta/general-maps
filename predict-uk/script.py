@@ -2,7 +2,10 @@ import csv
 import re
 import sys
 import tempfile
+import json
 
+import electiondata as e
+from permacache import permacache
 import pandas as pd
 import numpy as np
 
@@ -36,6 +39,23 @@ def load_file(path):
     return result.set_index("ConstituencyName")
 
 
+def uk_density():
+    with open("data/uk-shapefile.geojson") as f:
+        uk_geojson = json.load(f)
+    area_uk_sqkm = {
+        feat["properties"]["pcon19nm"]: feat["properties"]["st_areashape"] / 1000 ** 2
+        for feat in uk_geojson["features"]
+    }
+    density = load_file("race.csv")[["CONLevelALL"]]
+    density["area"] = density.index.map(
+        lambda x: area_uk_sqkm[
+            x.replace("ô", "o").replace("Pembrokeshire South", "South Pembrokeshire")
+        ]
+    )
+    density["log_density"] = np.log(density.CONLevelALL / density.area)
+    return density[["log_density"]]
+
+
 def load_all_uk():
     britain_race = (
         load_file("race.csv")[["CON%W", "CON%AS", "CON%BB"]].rename(
@@ -59,7 +79,12 @@ def load_all_uk():
     )
     britain_religion = britain_religion[["total_religious"]]
 
-    britain = britain_race.join(britain_edu).join(britain_religion).fillna(0.9)
+    britain = (
+        britain_race.join(britain_edu)
+        .join(britain_religion)
+        .fillna(0.9)
+        .join(uk_density())
+    )
     return britain
 
 
@@ -127,25 +152,69 @@ def draw_britain(britain, out):
         f.write(res)
 
 
-def main():
-    df = data_by_year()[2020]
+def usa_density_data(version=2):
+
+    geojson = USAPresidencyBaseMap().counties
+    area_usa_sqkm = {
+        feat["id"]: feat["properties"]["CENSUSAREA"] * 0.621371 ** 2
+        for feat in geojson["features"]
+    }
+
+    data_overall = pd.read_csv(
+        "https://raw.githubusercontent.com/kavigupta/census-downloader/master/outputs/counties_census2020.csv"
+    )
+    normalizer = e.usa_county_to_fips("STUSAB", alaska_handler=e.alaska.FIVE_REGIONS())
+    normalizer.rewrite["chugach census area"] = "copper river census area"
+    normalizer.apply_to_df(data_overall, "NAME", "FIPS")
+    df = data_overall.groupby("FIPS").sum()[["POP100"]]
+    df["area"] = [area_usa_sqkm[x] for x in df.index]
+    df["log_density"] = np.log(df.POP100 / df.area)
+    return df[["log_density", "POP100"]]
+
+
+@permacache("uk-prediction/usa_data")
+def usa_data(version="usa_data_7"):
+    df_whole = data_by_year()[2020]
+    df = df_whole.set_index("FIPS")
     usa_stats = df[
-        ["white %", "asian %", "black %", "hispanic %", "bachelor %", "total_religious"]
+        [
+            "white %",
+            "asian %",
+            "black %",
+            "hispanic %",
+            "bachelor %",
+            "total_religious",
+            "dem_margin",
+            "turnout",
+        ]
     ]
+    usa_stats = usa_stats.join(usa_density_data()).reset_index()
+    del usa_stats["FIPS"]
+    dem_margin = usa_stats.pop("dem_margin")
+    turnout = usa_stats.pop("turnout")
+    population = usa_stats.pop("POP100")
+    return df_whole, usa_stats, dem_margin, turnout, population
+
+
+def main():
+
+    df_whole, usa_stats, dem_margin, turnout, population = usa_data()
 
     p_w = sklearn.linear_model.Ridge(alpha=1e-1).fit(
         np.array(usa_stats),
-        np.arctanh(np.array(df.dem_margin)),
-        sample_weight=np.array(df.CVAP).astype(np.float64),
+        np.arctanh(np.array(dem_margin)),
+        sample_weight=np.array(population).astype(np.float64),
     )
     t_w = sklearn.linear_model.Ridge(alpha=1e-1).fit(
         np.array(usa_stats),
-        np.arctanh(np.minimum(df.turnout, 0.99)),
-        sample_weight=np.array(df.CVAP).astype(np.float64),
+        np.arctanh(np.minimum(turnout, 0.99)),
+        sample_weight=np.array(population).astype(np.float64),
     )
+
+    print(p_w.coef_)
     _ = produce_entire_map(
-        df,
-        title="Pred(race, edu, relig)",
+        df_whole,
+        title="Pred(race, edu, relig, dens)",
         out_path="images/usa.svg",
         dem_margin=np.tanh(p_w.predict(np.array(usa_stats))),
         turnout=np.tanh(t_w.predict(np.array(usa_stats))),
@@ -168,8 +237,15 @@ def main():
             break
     draw_britain(britain_normal, "images/normal.svg")
     draw_britain(britain_calibrated, "images/calibrated.svg")
-    
-    print((britain_normal.predictions < 0).sum())
+
+    republican = (britain_normal.predictions < 0).sum()
+    democrat = 650 - republican
+    with open("template.svg") as f:
+        svg = f.read()
+    svg = svg.replace("$D", str(democrat)).replace("$R", str(republican))
+    with open("final.svg", "w") as f:
+        f.write(svg)
+
 
 if __name__ == "__main__":
     main()
