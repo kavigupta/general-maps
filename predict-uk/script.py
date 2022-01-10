@@ -23,7 +23,7 @@ from mapmaker.mapper import USAPresidencyBaseMap
 
 
 usa_profile = Profile(
-    symbol=dict(dem="L", gop="T"),
+    symbol=dict(dem="D", gop="R"),
     hue=dict(dem=2 / 3, gop=1),
     bot_name="bot_2024",
     credit="DEFAULT_CREDIT",
@@ -122,7 +122,7 @@ def read_uk_map(britain):
     return map, backmap
 
 
-def draw_britain(britain, out):
+def draw_britain_2_party(britain, out):
     britain = britain.copy()
     britain["colors"] = usa_profile.place_on_county_colorscale(
         {
@@ -130,7 +130,9 @@ def draw_britain(britain, out):
             "gop": 0.5 * (1 - britain["predictions"]),
         }
     )
+    draw_britain(britain, out)
 
+def draw_britain(britain, out):
     map, backmap = read_uk_map(britain)
     out_lines = []
     lines = map.split("\n")
@@ -308,8 +310,8 @@ def predict_uk_with_usa():
             bot = k
         else:
             break
-    draw_britain(britain_normal, "images/normal.svg")
-    draw_britain(britain_calibrated, "images/calibrated.svg")
+    draw_britain_2_party(britain_normal, "images/normal.svg")
+    draw_britain_2_party(britain_calibrated, "images/calibrated.svg")
 
     republican = (britain_normal.predictions < 0).sum()
     democrat = 650 - republican
