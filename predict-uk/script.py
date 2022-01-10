@@ -17,7 +17,7 @@ import sklearn.linear_model
 sys.path.insert(0, "/home/kavi/2024-bot/mapmaker/")
 
 from mapmaker.data import data_by_year
-from mapmaker.colors import Profile, get_color
+from mapmaker.colors import Profile, get_color, DEFAULT_CREDIT
 from mapmaker.stitch_map import produce_entire_map
 from mapmaker.mapper import USAPresidencyBaseMap
 
@@ -26,7 +26,7 @@ usa_profile = Profile(
     symbol=dict(dem="D", gop="R"),
     hue=dict(dem=2 / 3, gop=1),
     bot_name="bot_2024",
-    credit="DEFAULT_CREDIT",
+    credit=DEFAULT_CREDIT,
     extra_ec=dict(gop=1),
 )
 
@@ -130,9 +130,10 @@ def draw_britain_2_party(britain, out):
             "gop": 0.5 * (1 - britain["predictions"]),
         }
     )
-    draw_britain(britain, out)
+    draw_britain(britain, usa_profile, out)
 
-def draw_britain(britain, out):
+
+def draw_britain(britain, profile, out):
     map, backmap = read_uk_map(britain)
     out_lines = []
     lines = map.split("\n")
@@ -147,7 +148,7 @@ def draw_britain(britain, out):
         name = "-".join(name)
         assert name in backmap, name
         color = "#%02x%02x%02x" % tuple(
-            get_color(usa_profile.county_colorscale, britain.colors[backmap[name]])
+            get_color(profile.county_colorscale, britain.colors[backmap[name]])
         )
         line = re.sub('class="([^"]+)"', 'class="seat"', line)
         line = re.sub('style="', f'style="fill:{color};', line)
@@ -290,7 +291,7 @@ def predict_uk_with_usa():
     _ = produce_entire_map(
         df_whole,
         title="Pred(race, edu, relig, dens)",
-        out_path="images/usa.svg",
+        out_path="images/usa_predicted_from_usa.svg",
         dem_margin=np.tanh(p_w.predict(np.array(usa_stats))),
         turnout=np.tanh(t_w.predict(np.array(usa_stats))),
         basemap=USAPresidencyBaseMap(),
@@ -310,8 +311,10 @@ def predict_uk_with_usa():
             bot = k
         else:
             break
-    draw_britain_2_party(britain_normal, "images/normal.svg")
-    draw_britain_2_party(britain_calibrated, "images/calibrated.svg")
+    draw_britain_2_party(britain_normal, "images/uk_predicted_from_usa_normal.svg")
+    draw_britain_2_party(
+        britain_calibrated, "images/uk_predicted_from_usa_calibrated.svg"
+    )
 
     republican = (britain_normal.predictions < 0).sum()
     democrat = 650 - republican
