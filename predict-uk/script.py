@@ -11,6 +11,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import tqdm.auto as tqdm
+import fire
 
 import sklearn.linear_model
 
@@ -18,9 +19,9 @@ sys.path.insert(0, "/home/kavi/2024-bot/mapmaker/")
 
 from mapmaker.data import data_by_year
 from mapmaker.colors import Profile, get_color, DEFAULT_CREDIT
-from mapmaker.stitch_map import produce_entire_map
+from mapmaker.stitch_map import produce_entire_map, produce_entire_map_generic
 from mapmaker.mapper import USAPresidencyBaseMap
-
+from mapmaker.aggregation import get_electoral_vote_by_voteshare
 
 usa_profile = Profile(
     symbol=dict(dem="D", gop="R"),
@@ -28,6 +29,22 @@ usa_profile = Profile(
     bot_name="bot_2024",
     credit=DEFAULT_CREDIT,
     extra_ec=dict(gop=1),
+)
+
+uk_profile = Profile(
+    symbol=dict(Con="C", Lab="L", LD="D"),
+    name=dict(Con="Conservative", Lab="Labour", LD="Liberal Democratic"),
+    hue=dict(Con=2 / 3, Lab=1, LD=1 / 6),
+    bot_name="bot_2024",
+    credit=DEFAULT_CREDIT,
+)
+
+uk_profile_2_party = Profile(
+    symbol=dict(Con="C", Lab="L"),
+    name=dict(Con="Conservative", Lab="Labour and Liberal Democrat Unity"),
+    hue=dict(Con=2 / 3, Lab=1),
+    bot_name="bot_2024",
+    credit=DEFAULT_CREDIT,
 )
 
 
@@ -277,6 +294,65 @@ def train_england_model(version=4):
     return model
 
 
+class AddConservative(nn.Module):
+    def __init__(self, amount):
+        super().__init__()
+        self.amount = amount
+
+    def forward(self, x):
+        con, rest = x[:, :1], x[:, 1:]
+        con = con + self.amount
+        return torch.cat([con, rest], axis=1)
+
+
+def predict_based_on_england(usa_stats, adjust_amount):
+    model = train_england_model().eval()
+    if adjust_amount is not None:
+        *several, final = list(model)
+        model = nn.Sequential(*several, AddConservative(adjust_amount), final)
+
+    england = england_2019_results().copy()
+    uk = load_all_uk().copy()
+
+    with torch.no_grad():
+        yp_england = (
+            model(torch.tensor(np.array(uk.loc[england.index])).float()).exp().numpy()
+        )
+        yp_uk = model(torch.tensor(np.array(uk)).float()).exp().numpy()
+        yp_usa = model(torch.tensor(np.array(usa_stats)).float()).exp().numpy()
+
+    pred_con = (yp_england.argmax(1) == 0).sum()
+    actual_con = (np.array(england).argmax(1) == 0).sum()
+    print("Predicted con seats", pred_con),
+    print("Actual con seats", actual_con)
+    full_usa = dict(Con=yp_usa[:, 0], Lab=yp_usa[:, 1], LD=yp_usa[:, 2])
+    two_usa = dict(Con=yp_usa[:, 0], Lab=yp_usa[:, 1] + yp_usa[:, 2])
+    return pred_con, actual_con, yp_uk, full_usa, two_usa
+
+
+def get_calibrated_prediction(calibrate_full_usa):
+    df_whole, usa_stats, *_ = usa_data()
+    low, high = 0, 10
+    while True:
+        mid = (low + high) / 2
+        *_, full_usa, two_usa = predict_based_on_england(usa_stats, mid)
+        result = get_electoral_vote_by_voteshare(
+            df_whole,
+            voteshare_by_party=full_usa if calibrate_full_usa else two_usa,
+            turnout=df_whole.turnout,
+            basemap=USAPresidencyBaseMap(),
+            only_nonclose=False,
+        )
+        print(low, high, result["Lab"])
+        if result["Lab"] > 306:
+            low = mid
+        elif result["Lab"] < 306:
+            high = mid
+        if result["Lab"] == 306 or (high - low) < 1e-4:
+            break
+    return full_usa if calibrate_full_usa else two_usa
+
+
 def predict_uk_with_usa():
 
     df_whole, usa_stats, dem_margin, turnout, population = usa_data()
@@ -330,5 +406,67 @@ def predict_uk_with_usa():
         f.write(svg)
 
 
+def predict_usa_with_england():
+    df_whole, usa_stats, *_ = usa_data()
+    pred_con, actual_con, yp_uk, full_usa, two_usa = predict_based_on_england(
+        usa_stats, None
+    )
+    uk = load_all_uk().copy()
+    uk["colors"] = uk_profile.place_on_county_colorscale(
+        {
+            "Con": yp_uk[:, 0],
+            "Lab": yp_uk[:, 1],
+            "LD": yp_uk[:, 2],
+        }
+    )
+    draw_britain(uk, uk_profile, "images/uk_pred_from_england.svg")
+
+    def usa_map(path, name, profile, by_party):
+        produce_entire_map_generic(
+            df_whole,
+            title=name,
+            out_path=path,
+            voteshare_by_party=by_party,
+            turnout=df_whole.turnout,
+            basemap=USAPresidencyBaseMap(),
+            year=2020,
+            use_png=False,
+            profile=profile,
+        )
+
+    usa_map(
+        "images/usa_pred_from_england.svg",
+        "Direct",
+        uk_profile,
+        full_usa,
+    )
+    usa_map(
+        "images/usa_pred_from_england_two_party.svg",
+        "Direct [2 party]",
+        uk_profile_2_party,
+        two_usa,
+    )
+
+    usa_map(
+        "images/usa_pred_from_england_calibrated.svg",
+        "Calibrated",
+        uk_profile,
+        get_calibrated_prediction(True),
+    )
+
+    usa_map(
+        "images/usa_pred_from_england_two_party_calibrated.svg",
+        "Calibrated [2 party]",
+        uk_profile_2_party,
+        get_calibrated_prediction(False),
+    )
+
+    with open("template_predicted_from_england.svg") as f:
+        svg = f.read()
+    svg = svg.replace("$CA", str(actual_con)).replace("$CP", str(pred_con))
+    with open("final_predicted_from_england.svg", "w") as f:
+        f.write(svg)
+
+
 if __name__ == "__main__":
-    predict_uk_with_usa()
+    fire.Fire()
