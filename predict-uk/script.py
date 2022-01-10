@@ -253,18 +253,23 @@ def england_2019_results():
 
 
 @permacache("uk-prediction/train_england_model")
-def train_england_model():
+def train_england_model(version=4):
     uk = load_all_uk()
     england = england_2019_results()
     x = np.array(uk.loc[england.index])
     y = np.array(england)
 
     xt, yt = torch.tensor(x).float(), torch.tensor(y).float()
-    model = nn.Sequential(nn.Linear(x.shape[1], y.shape[1]), nn.Softmax(-1))
-    opt = torch.optim.Adam(model.parameters(), lr=2e-2)
-    for i in tqdm.trange(10 ** 5):
+    model = nn.Sequential(
+        nn.Linear(x.shape[1], 100),
+        nn.Sigmoid(),
+        nn.Linear(100, y.shape[1]),
+        nn.LogSoftmax(-1),
+    )
+    opt = torch.optim.Adam(model.parameters(), lr=2e-3)
+    for i in tqdm.trange(10 ** 4):
         opt.zero_grad()
-        loss = ((model(xt) - yt) ** 2).mean()
+        loss = -((model(xt) * yt)).mean()
         loss.backward()
         if i % 1000 == 0:
             print(i, loss.item())
