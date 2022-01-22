@@ -23,12 +23,12 @@
      showgrid="false"
      inkscape:zoom="0.33707404"
      inkscape:cx="1383.9689"
-     inkscape:cy="668.99249"
-     inkscape:window-width="1848"
-     inkscape:window-height="1016"
-     inkscape:window-x="3912"
-     inkscape:window-y="1107"
-     inkscape:window-maximized="1"
+     inkscape:cy="670.47584"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="1080"
+     inkscape:window-maximized="0"
      inkscape:current-layer="svg3058" />
   <title
      id="title2">World Map</title>
@@ -191,12 +191,12 @@
 
 	</style>
   <rect
-     style="color:#000000;overflow:visible;fill:#c9b1a5;fill-rule:evenodd;stroke-width:18.7015;stop-color:#000000;fill-opacity:1"
+     style="color:#000000;overflow:visible;fill:#c9b1a5;fill-opacity:1;fill-rule:evenodd;stroke-width:20.5786;stop-color:#000000"
      id="rect4000"
      width="2754.0042"
-     height="1398.0027"
+     height="1692.72"
      x="0"
-     y="0" />
+     y="-294.71732" />
   <path
      id="sd"
      class="landxx sd"
