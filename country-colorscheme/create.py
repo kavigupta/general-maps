@@ -30,8 +30,7 @@ def get_color(c, side):
         "cyan": "#00cccc",
         "yellow": "#dddd00",
         "light yellow": "#ffff88",
-        "no left/right": "#888888",
-        "one party": "#888888",
+        "-": "#888888",
     }[c]
 
 
@@ -66,7 +65,7 @@ def get_rectangles(countries, data):
         dx, dy = adjustments.get(db_name, (0, 0))
         row = data.loc[db_name]
 
-        r = float(row.Size) * 10
+        r = (float(row.Population) / 100_000) ** 0.5
         left, right = get_color(row.Left, "left"), get_color(row.Right, "right")
         if left is None or right is None:
             assert left is None and right is None
