@@ -21,15 +21,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="1.858665"
-     inkscape:cx="386.56778"
-     inkscape:cy="1025.7362"
+     inkscape:zoom="0.54400666"
+     inkscape:cx="1667.259"
+     inkscape:cy="1432.8869"
      inkscape:window-width="1848"
      inkscape:window-height="1016"
      inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g18505" />
+     inkscape:current-layer="svg3058" />
   <title
      id="title2">World Map</title>
   <style
@@ -11737,14 +11737,25 @@
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:35.141px;line-height:125%;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.878526px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="1702.2832"
-       y="833.75049"
+       x="1702.283"
+       y="807.31281"
        id="text4803"><tspan
          sodipodi:role="line"
          id="tspan4801"
-         x="1702.2832"
-         y="833.75049"
+         x="1702.283"
+         y="807.31281"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';fill:#000000;stroke:none;stroke-width:0.878526px">Most Common Colors</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:21.3071px;line-height:125%;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.532679px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1717.5925"
+       y="831.90076"
+       id="text4803-36"><tspan
+         sodipodi:role="line"
+         id="tspan4801-7"
+         x="1717.5925"
+         y="831.90076"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';fill:#000000;stroke:none;stroke-width:0.532679px">(weighted by country population)</tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:35.141px;line-height:125%;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.878526px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -11816,60 +11827,65 @@
          y="631.73309" />
       <text
          xml:space="preserve"
-         style="font-weight:bold;font-size:18.8533px;line-height:125%;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:425.912;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.471333px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-weight:bold;font-size:18.8533px;line-height:125%;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:456.516;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.471333px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="231.01588"
          y="709.56604"
          id="text4803-3-3-5-6"
-         transform="matrix(0.60277739,0,0,0.60277739,-29.720308,379.36321)"><tspan
+         transform="matrix(0.5637244,0,0,0.5637244,-21.245681,406.49149)"><tspan
            x="231.01588"
            y="709.56604"
-           id="tspan19139"><tspan
+           id="tspan9064"><tspan
              style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:center;text-anchor:middle"
-             id="tspan19137">Grey indicates that either the country has </tspan></tspan><tspan
+             id="tspan9062">Grey indicates that either the country has no </tspan></tspan><tspan
            x="231.01588"
            y="733.45545"
-           id="tspan19143"><tspan
+           id="tspan9068"><tspan
              style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:center;text-anchor:middle"
-             id="tspan19141">no elections or doesn't have a left/right </tspan></tspan><tspan
+             id="tspan9066">elections or doesn't have a left/right </tspan></tspan><tspan
            x="231.01588"
            y="757.34486"
-           id="tspan19147"><tspan
+           id="tspan9072"><tspan
              style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:center;text-anchor:middle"
-             id="tspan19145">spectrum. In all other cases, we use the </tspan></tspan><tspan
+             id="tspan9070">spectrum. In all other cases, we look at the </tspan></tspan><tspan
            x="231.01588"
            y="781.23426"
-           id="tspan19151"><tspan
+           id="tspan9076"><tspan
              style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:center;text-anchor:middle"
-             id="tspan19149">most left and most right wing party.
-</tspan></tspan><tspan
+             id="tspan9074">top 2 parties/coalitions, and classify them as </tspan></tspan><tspan
            x="231.01588"
            y="805.12367"
-           id="tspan19155"><tspan
+           id="tspan9080"><tspan
              style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:center;text-anchor:middle"
-             id="tspan19153">
+             id="tspan9078">more left/more right.
 </tspan></tspan><tspan
            x="231.01588"
            y="829.01307"
-           id="tspan19159"><tspan
+           id="tspan9084"><tspan
              style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:center;text-anchor:middle"
-             id="tspan19157">The area of the square corresponds to the </tspan></tspan><tspan
-           x="231.01588"
-           y="852.90248"
-           id="tspan19163"><tspan
-             style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:center;text-anchor:middle"
-             id="tspan19161">country's population.
+             id="tspan9082">
 </tspan></tspan><tspan
            x="231.01588"
-           y="876.79188"
-           id="tspan19167"><tspan
+           y="852.90248"
+           id="tspan9088"><tspan
              style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:center;text-anchor:middle"
-             id="tspan19165">
+             id="tspan9086">The area of the square corresponds to the </tspan></tspan><tspan
+           x="231.01588"
+           y="876.79188"
+           id="tspan9092"><tspan
+             style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:center;text-anchor:middle"
+             id="tspan9090">country's population.
 </tspan></tspan><tspan
            x="231.01588"
            y="900.68128"
-           id="tspan19171"><tspan
+           id="tspan9096"><tspan
              style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:center;text-anchor:middle"
-             id="tspan19169">See full spreadsheet at bit.ly/countrycolors</tspan></tspan></text>
+             id="tspan9094">
+</tspan></tspan><tspan
+           x="231.01588"
+           y="924.57069"
+           id="tspan9100"><tspan
+             style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:center;text-anchor:middle"
+             id="tspan9098">See full spreadsheet at bit.ly/countrycolors</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-weight:bold;font-size:24.5053px;line-height:125%;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.612635px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -11896,24 +11912,24 @@
              transform="translate(202.2333,-7.9138013)"><tspan
                x="105.20811"
                y="709.56604"
-               id="tspan19175"><tspan
+               id="tspan9104"><tspan
                  style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold'"
-                 id="tspan19173">Right </tspan></tspan><tspan
+                 id="tspan9102">Right </tspan></tspan><tspan
                x="105.20811"
                y="733.45545"
-               id="tspan19179"><tspan
+               id="tspan9108"><tspan
                  style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold'"
-                 id="tspan19177">wing </tspan></tspan><tspan
+                 id="tspan9106">wing </tspan></tspan><tspan
                x="105.20811"
                y="757.34486"
-               id="tspan19183"><tspan
+               id="tspan9112"><tspan
                  style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold'"
-                 id="tspan19181">party </tspan></tspan><tspan
+                 id="tspan9110">party </tspan></tspan><tspan
                x="105.20811"
                y="781.23426"
-               id="tspan19187"><tspan
+               id="tspan9116"><tspan
                  style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold'"
-                 id="tspan19185">color</tspan></tspan></text>
+                 id="tspan9114">color</tspan></tspan></text>
           <text
              xml:space="preserve"
              style="font-weight:bold;font-size:18.8533px;line-height:125%;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:84.6383;fill:#0000cc;fill-opacity:1;stroke:none;stroke-width:0.471333px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -11923,24 +11939,24 @@
              transform="translate(-120.65068,-7.9138013)"><tspan
                x="208.9388"
                y="709.56604"
-               id="tspan19191"><tspan
+               id="tspan9120"><tspan
                  style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:end;text-anchor:end"
-                 id="tspan19189">Left </tspan></tspan><tspan
+                 id="tspan9118">Left </tspan></tspan><tspan
                x="208.9388"
                y="733.45545"
-               id="tspan19195"><tspan
+               id="tspan9124"><tspan
                  style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:end;text-anchor:end"
-                 id="tspan19193">wing </tspan></tspan><tspan
+                 id="tspan9122">wing </tspan></tspan><tspan
                x="208.9388"
                y="757.34486"
-               id="tspan19199"><tspan
+               id="tspan9128"><tspan
                  style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:end;text-anchor:end"
-                 id="tspan19197">party </tspan></tspan><tspan
+                 id="tspan9126">party </tspan></tspan><tspan
                x="208.9388"
                y="781.23426"
-               id="tspan19203"><tspan
+               id="tspan9132"><tspan
                  style="font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';text-align:end;text-anchor:end"
-                 id="tspan19201">color</tspan></tspan></text>
+                 id="tspan9130">color</tspan></tspan></text>
         </g>
         <g
            id="g4312"
