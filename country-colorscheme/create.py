@@ -260,10 +260,20 @@ def create_map(map_path, out_path):
         svg = f.read().replace("fill:#123456", "fill:#123456;fill-opacity:0")
     *svg, close = svg.strip().split("\n")
     assert close == "</svg>"
-    svg = svg + rectangles + all_color_rectangles(colors) + [close]
+    svg = svg + rectangles + all_color_rectangles(rec, colors) + [close]
     with open(out_path, "w") as f:
         f.write("\n".join(svg))
 
     subprocess.check_call(
-        ["inkscape", "--export-type=png", "--export-area-drawing", "out.svg"]
+        [
+            "inkscape",
+            "--export-type=png",
+            "--export-area-drawing",
+            "--export-width=4096",
+            out_path,
+        ]
     )
+
+
+if __name__ == "__main__":
+    create_map("templatemap.svg", "output/out.svg")
