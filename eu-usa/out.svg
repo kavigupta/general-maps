@@ -150,7 +150,7 @@
                id="tspan18034-9-7"
                style="stroke-width:0.118052"
                x="-19.994349"
-               y="131.59225">Popular Vote: D+1.55%</tspan></text>
+               y="131.59225">Popular Vote: D+4.09%</tspan></text>
           <text
              xml:space="preserve"
              style="font-size:4.72207px;line-height:1.25;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0px;word-spacing:0px;stroke-width:0.118052"
@@ -161,7 +161,7 @@
                id="tspan18034-9-0-9"
                style="stroke-width:0.118052"
                x="-19.994349"
-               y="136.44174">Electoral College: 337 D, 153 R</tspan></text>
+               y="136.44174">Electoral College: 405 D, 85 R</tspan></text>
           <text
              xml:space="preserve"
              style="font-size:4.72207px;line-height:1.25;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0px;word-spacing:0px;stroke-width:0.118052"
@@ -172,7 +172,7 @@
                id="tspan18034-9-0-6-2"
                style="stroke-width:0.118052"
                x="-19.616583"
-               y="141.29121">Tipping Point: Netherlands D+9.59%</tspan></text>
+               y="141.29121">Tipping Point: France D+15.17%</tspan></text>
         </g>
       </g>
       <image
@@ -224,7 +224,7 @@
                id="tspan18034-9-7-1"
                style="stroke-width:0.118052"
                x="-19.994349"
-               y="131.59225">Popular Vote: Biden+11.88%</tspan></text>
+               y="131.59225">Popular Vote: Biden+11.37%</tspan></text>
           <text
              xml:space="preserve"
              style="font-size:4.72207px;line-height:1.25;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0px;word-spacing:0px;stroke-width:0.118052"
@@ -322,14 +322,14 @@
        transform="matrix(0.39051116,0,0,0.39051116,-7.4727566,63.197573)"><tspan
          x="69.016754"
          y="110.51016"
-         id="tspan35635"><tspan
+         id="tspan36154"><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan35633">Based roughly on actual election results, grouped by ideology, assuming that the </tspan></tspan><tspan
+           id="tspan36152">Based roughly on actual election results, grouped by ideology, assuming that the </tspan></tspan><tspan
          x="69.016754"
          y="120.03481"
-         id="tspan35639"><tspan
+         id="tspan36158"><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan35637">European right would lean Republican but not be 100% Republican.</tspan></tspan></text>
+           id="tspan36156">European right would lean Republican but not be uniformally Republican</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:7.61972px;line-height:1.25;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:274.411;stroke-width:0.190493"
@@ -339,6 +339,6 @@
        transform="matrix(0.39051116,0,0,0.39051116,132.02066,53.844677)"><tspan
          x="69.016754"
          y="110.51016"
-         id="tspan35641">@notkavi</tspan></text>
+         id="tspan36160">@notkavi</tspan></text>
   </g>
 </svg>
