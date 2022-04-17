@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="201.21999mm"
+   height="129.3914mm"
+   viewBox="0 0 201.21999 129.3914"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (08b2f3d93c, 2022-04-05)"
+   sodipodi:docname="rationalvoting.svg"
+   inkscape:export-filename="/home/kavi/temp.png"
+   inkscape:export-xdpi="517.06372"
+   inkscape:export-ydpi="517.06372"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.2035073"
+     inkscape:cx="393.31891"
+     inkscape:cy="221.78816"
+     inkscape:window-width="3768"
+     inkscape:window-height="2096"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path2050" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path2047" />
+    </marker>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 62.391397 : 1"
+       inkscape:vp_y="0 : 999.99998 : 0"
+       inkscape:vp_z="720.00003 : 62.391397 : 1"
+       inkscape:persp3d-origin="360.00002 : -14.275271 : 1"
+       id="perspective289" />
+    <clipPath
+       id="cp3">
+      <polygon
+         id="polygon1797"
+         points="95,203.563 95,190 73,190 73,203.563 " />
+    </clipPath>
+    <clipPath
+       id="cp5">
+      <polygon
+         id="polygon1821"
+         points="95,203.563 95,190 73,190 73,203.563 " />
+    </clipPath>
+    <clipPath
+       id="cp7">
+      <polygon
+         id="polygon1845"
+         points="88,203.563 88,190 73,190 73,203.563 " />
+    </clipPath>
+    <clipPath
+       id="cp9">
+      <polygon
+         id="polygon1867"
+         points="88,203.563 88,190 73,190 73,203.563 " />
+    </clipPath>
+    <clipPath
+       id="cp10">
+      <polygon
+         id="polygon1874"
+         points="434,364 434,13 74,13 74,364 " />
+    </clipPath>
+    <clipPath
+       id="cp11">
+      <polygon
+         id="polygon1889"
+         points="88,203.563 88,190 73,190 73,203.563 " />
+    </clipPath>
+    <clipPath
+       id="cp13">
+      <polygon
+         id="polygon1907"
+         points="95,204 95,190 74,190 74,204 " />
+    </clipPath>
+    <clipPath
+       id="cp15">
+      <polygon
+         id="polygon1931"
+         points="95,204 95,190 74,190 74,204 " />
+    </clipPath>
+    <clipPath
+       id="cp17">
+      <polygon
+         id="polygon1955"
+         points="88,204 88,190 73,190 73,204 " />
+    </clipPath>
+    <clipPath
+       id="cp19">
+      <polygon
+         id="polygon1977"
+         points="88,204 88,190 73,190 73,204 " />
+    </clipPath>
+    <clipPath
+       id="cp21">
+      <polygon
+         id="polygon1999"
+         points="88,204 88,190 73,190 73,204 " />
+    </clipPath>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mstart-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path2047-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path2050-3" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(55.376976,-5.6298394)">
+    <rect
+       style="fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.159692;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       id="rect29123"
+       width="201.21999"
+       height="129.3914"
+       x="-55.376976"
+       y="5.6298394" />
+    <g
+       id="g304909"
+       transform="translate(-1.1756686,-4.7624995)">
+      <g
+         id="g241697"
+         transform="translate(-3.232646,-1.057224)">
+        <text
+           xml:space="preserve"
+           style="font-size:3.52778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:74.9231;fill:#00ff00;fill-opacity:1;stroke-width:0.174897"
+           x="-32.310974"
+           y="70.230988"
+           id="text13135-4-8-1"
+           transform="matrix(0.84130048,0,0,0.84130048,-18.097082,-20.702451)"><tspan
+             x="-32.310974"
+             y="70.230988"
+             id="tspan325859"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+               id="tspan325853">Assume there's </tspan><tspan
+               style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi;fill:#ffffff"
+               id="tspan325855">v</tspan><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+               id="tspan325857"> voters and the election is </tspan></tspan><tspan
+             x="-32.310974"
+             y="74.735914"
+             id="tspan325869"><tspan
+   style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+   id="tspan325861">predicted to have a margin of </tspan>x<tspan
+   style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+   id="tspan325863">±</tspan><tspan
+   style="fill:#00ffff"
+   id="tspan325865">y</tspan><tspan
+   style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+   id="tspan325867"> points. We </tspan></tspan><tspan
+             x="-32.310974"
+             y="79.155309"
+             id="tspan325873"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+               id="tspan325871">can model the predicted margin as a normal </tspan></tspan><tspan
+             x="-32.310974"
+             y="83.574705"
+             id="tspan325877"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+               id="tspan325875">distribution (usually a reasonable assumption) </tspan></tspan><tspan
+             x="-32.310974"
+             y="88.079633"
+             id="tspan325885"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+               id="tspan325879">and then stretch this out by </tspan><tspan
+               style="font-style:italic;font-family:Norasi;-inkscape-font-specification:'Norasi Italic'"
+               id="tspan325881">v</tspan><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+               id="tspan325883"> to give a </tspan></tspan><tspan
+             x="-32.310974"
+             y="92.499029"
+             id="tspan325889"><tspan
+               style="fill:#ff0000"
+               id="tspan325887">distribution of raw vote margins.
+</tspan></tspan><tspan
+             x="-32.310974"
+             y="96.918424"
+             id="tspan325893"><tspan
+               style="fill:#ff0000"
+               id="tspan325891">
+</tspan></tspan><tspan
+             x="-32.310974"
+             y="101.33782"
+             id="tspan325899"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+               id="tspan325895">We then can use the </tspan><tspan
+               style="fill:#ff00ff"
+               id="tspan325897">height of this probability </tspan></tspan><tspan
+             x="-32.310974"
+             y="105.75722"
+             id="tspan325905"><tspan
+               style="fill:#ff00ff"
+               id="tspan325901">distribution at 0</tspan><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+               id="tspan325903"> (a tied vote) to roughly model </tspan></tspan><tspan
+             x="-32.310974"
+             y="110.17661"
+             id="tspan325909"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+               id="tspan325907">the probability of a single voter swinging the </tspan></tspan><tspan
+             x="-32.310974"
+             y="114.59601"
+             id="tspan325913"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell;fill:#ffffff"
+               id="tspan325911">election.</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:3.52778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:78.0375;fill:#ffffff;fill-opacity:1;stroke-width:0.174897"
+           x="-32.310974"
+           y="70.230988"
+           id="text13135-4-8-1-8"
+           transform="matrix(0.84130048,0,0,0.84130048,-18.064435,22.29796)"><tspan
+             x="-32.310974"
+             y="70.230988"
+             id="tspan325915">This turns out to be relatively easy to compute, </tspan><tspan
+             x="-32.310974"
+             y="74.640707"
+             id="tspan325917">and is given by the formula
+</tspan><tspan
+             x="-32.310974"
+             y="79.050436"
+             id="tspan325919">
+</tspan><tspan
+             x="-32.310974"
+             y="83.545698"
+             id="tspan325941"><tspan
+               style="fill:#ff00ff"
+               id="tspan325921">h</tspan><tspan
+               style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+               id="tspan325923"> = 0.798/(v</tspan><tspan
+               style="fill:#00ffff"
+               id="tspan325925">y</tspan><tspan
+               style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+               id="tspan325927">) * exp(-4(</tspan><tspan
+               style="fill:#00ff00"
+               id="tspan325929">x</tspan><tspan
+               style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+               id="tspan325931">/</tspan><tspan
+               style="fill:#00ffff"
+               id="tspan325933">y</tspan><tspan
+               style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+               id="tspan325935">)</tspan><tspan
+               style="font-style:italic;font-size:65%;font-family:Norasi;-inkscape-font-specification:Norasi;baseline-shift:super"
+               id="tspan325937">2</tspan><tspan
+               style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+               id="tspan325939">) 
+</tspan></tspan><tspan
+             x="-32.310974"
+             y="88.040952"
+             id="tspan325945"><tspan
+               style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+               id="tspan325943">
+</tspan></tspan><tspan
+             x="-32.310974"
+             y="92.450674"
+             id="tspan325949"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+               id="tspan325947">This is often a very small value! For example, if </tspan></tspan><tspan
+             x="-32.310974"
+             y="96.870069"
+             id="tspan325953"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+               id="tspan325951">you consider a typical election with 5 million </tspan></tspan><tspan
+             x="-32.310974"
+             y="101.28946"
+             id="tspan325961"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+               id="tspan325955">voters, that is expected to be R+2 </tspan><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+               id="tspan325957">±</tspan><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+               id="tspan325959"> 5 points, this </tspan></tspan><tspan
+             x="-32.310974"
+             y="105.70886"
+             id="tspan325965"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+               id="tspan325963">ends up being 1 in 594,000!
+</tspan></tspan><tspan
+             x="-32.310974"
+             y="110.12826"
+             id="tspan325969"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+               id="tspan325967">
+</tspan></tspan><tspan
+             x="-32.310974"
+             y="114.54765"
+             id="tspan325973"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+               id="tspan325971">Some have concluded as a result that voting is </tspan></tspan><tspan
+             x="-32.310974"
+             y="118.96705"
+             id="tspan325977"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+               id="tspan325975">irrational, as there is a very small chance you </tspan></tspan><tspan
+             x="-32.310974"
+             y="123.38644"
+             id="tspan325981"><tspan
+               style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+               id="tspan325979">affect the result.</tspan></tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:3.52778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:70.2703;fill:#ffffff;fill-opacity:1;stroke-width:0.174897"
+         x="-32.310974"
+         y="70.230988"
+         id="text13135-4-8-1-8-9"
+         transform="matrix(0.84130048,0,0,0.84130048,46.574232,-21.792241)"><tspan
+           x="-32.310974"
+           y="70.230988"
+           id="tspan325983">However, it's important to remember that if </tspan><tspan
+           x="-32.310974"
+           y="74.640707"
+           id="tspan325985">you're deciding an election, you're deciding </tspan><tspan
+           x="-32.310974"
+           y="79.050436"
+           id="tspan325987">the fate of every single person in the region </tspan><tspan
+           x="-32.310974"
+           y="83.460165"
+           id="tspan325989">of interest! This means that if you put a value </tspan><tspan
+           x="-32.310974"
+           y="87.955427"
+           id="tspan325993">of <tspan
+   style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi;fill:#ff6600"
+   id="tspan325991">k</tspan> on the average person's quality of life </tspan><tspan
+           x="-32.310974"
+           y="92.450681"
+           id="tspan325997">improvement, and there's <tspan
+   style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi;fill:#ffcc00"
+   id="tspan325995">n</tspan> people in this </tspan><tspan
+           x="-32.310974"
+           y="96.945936"
+           id="tspan325999">society, the value of swinging an election is </tspan><tspan
+           x="-32.310974"
+           y="101.44119"
+           id="tspan326007"><tspan
+             style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi;fill:#ff6600"
+             id="tspan326001">k</tspan><tspan
+             style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi;fill:#ffcc00"
+             id="tspan326003">n</tspan><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan326005">. If we then express the number of voters </tspan></tspan><tspan
+           x="-32.310974"
+           y="105.94612"
+           id="tspan326017"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan326009">in this society as </tspan><tspan
+             style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi;fill:#ffcc00"
+             id="tspan326011">n</tspan><tspan
+             style="fill:#c87137"
+             id="tspan326013">t</tspan><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan326015">, where t is </tspan></tspan><tspan
+           x="-32.310974"
+           y="110.36551"
+           id="tspan326021"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan326019">&quot;turnout&quot; (here defined as the percentage of </tspan></tspan><tspan
+           x="-32.310974"
+           y="114.78491"
+           id="tspan326025"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan326023">people who vote), then we have that our </tspan></tspan><tspan
+           x="-32.310974"
+           y="119.20431"
+           id="tspan326029"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan326027">formula becomes
+</tspan></tspan><tspan
+           x="-32.310974"
+           y="123.6237"
+           id="tspan326033"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan326031">
+</tspan></tspan><tspan
+           x="-32.310974"
+           y="128.12863"
+           id="tspan326057"><tspan
+             style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+             id="tspan326035">E = 0.798/(</tspan><tspan
+             style="fill:#aa4400"
+             id="tspan326037">t</tspan><tspan
+             style="fill:#00ffff"
+             id="tspan326039">y</tspan><tspan
+             style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+             id="tspan326041">) * exp(-4(</tspan><tspan
+             style="fill:#00ff00"
+             id="tspan326043">x</tspan><tspan
+             style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+             id="tspan326045">/</tspan><tspan
+             style="fill:#00ffff"
+             id="tspan326047">y</tspan><tspan
+             style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+             id="tspan326049">)</tspan><tspan
+             style="font-size:65%;baseline-shift:super"
+             id="tspan326051">2</tspan><tspan
+             style="font-style:italic;font-family:Norasi;-inkscape-font-specification:Norasi"
+             id="tspan326053">) </tspan><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan326055">
+</tspan></tspan><tspan
+           x="-32.310974"
+           y="132.54802"
+           id="tspan326061"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan326059"> </tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:3.52778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:70.2703;fill:#ffffff;fill-opacity:1;stroke-width:0.174897"
+         x="-32.310974"
+         y="70.230988"
+         id="text13135-4-8-1-8-9-2"
+         transform="matrix(0.84130048,0,0,0.84130048,109.54987,-21.792241)"><tspan
+           x="-32.310974"
+           y="70.230988"
+           id="tspan326063">If we assume that the previous election had </tspan><tspan
+           x="-32.310974"
+           y="74.640707"
+           id="tspan326065">a &quot;turnout&quot; of 40% (typical for a US election - </tspan><tspan
+           x="-32.310974"
+           y="79.050436"
+           id="tspan326067">keep in mind the denominator here includes </tspan><tspan
+           x="-32.310974"
+           y="83.460165"
+           id="tspan326069">children and non-citizens), we end up with a </tspan><tspan
+           x="-32.310974"
+           y="87.869894"
+           id="tspan326071">value of 16. That is, the value of a vote is </tspan><tspan
+           x="-32.310974"
+           y="92.279623"
+           id="tspan326073">worth 16 times the value of winning an </tspan><tspan
+           x="-32.310974"
+           y="96.689352"
+           id="tspan326075">election to the average person.
+</tspan><tspan
+           x="-32.310974"
+           y="101.09908"
+           id="tspan326077">
+</tspan><tspan
+           x="-32.310974"
+           y="105.50881"
+           id="tspan326079">In other words, as long as your party winning </tspan><tspan
+           x="-32.310974"
+           y="109.91854"
+           id="tspan326083"><tspan
+             style="font-weight:bold"
+             id="tspan326081">gives you at least 6% of the value of the </tspan></tspan><tspan
+           x="-32.310974"
+           y="114.32827"
+           id="tspan326087"><tspan
+   style="font-weight:bold"
+   id="tspan326085">time and effort it takes you to vote</tspan>, you </tspan><tspan
+           x="-32.310974"
+           y="118.738"
+           id="tspan326089">should if you care about other people in </tspan><tspan
+           x="-32.310974"
+           y="123.14773"
+           id="tspan326091">society. Given how easy it generally is to </tspan><tspan
+           x="-32.310974"
+           y="127.55745"
+           id="tspan326093">vote (at most a few hours of time are spent), </tspan><tspan
+           x="-32.310974"
+           y="131.96718"
+           id="tspan326095">it is well worthwhile in almost all cases.
+</tspan><tspan
+           x="-32.310974"
+           y="136.37691"
+           id="tspan326097">
+</tspan><tspan
+           x="-32.310974"
+           y="140.78664"
+           id="tspan326099">Now of course, the value of a vote varies a </tspan><tspan
+           x="-32.310974"
+           y="145.19637"
+           id="tspan326101">lot depending on the circumstance. If, for </tspan><tspan
+           x="-32.310974"
+           y="149.6061"
+           id="tspan326103">example, you don't have a competitive </tspan><tspan
+           x="-32.310974"
+           y="154.01583"
+           id="tspan326105">election, e.g., the outcome is predicted to be </tspan><tspan
+           x="-32.310974"
+           y="158.42556"
+           id="tspan326107">D+30 ± 10 points and the populations are </tspan><tspan
+           x="-32.310974"
+           y="162.83529"
+           id="tspan326111">before, you end up with E = 10<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan326109">-15</tspan>. Here, the </tspan><tspan
+           x="-32.310974"
+           y="167.24502"
+           id="tspan326113">value of voting is probably not that useful, </tspan><tspan
+           x="-32.310974"
+           y="171.65474"
+           id="tspan326115">though in almost all cases, there's other, </tspan><tspan
+           x="-32.310974"
+           y="176.06447"
+           id="tspan326117">closer elections on the ballot that are worth </tspan><tspan
+           x="-32.310974"
+           y="180.4742"
+           id="tspan326119">voting in.</tspan></text>
+    </g>
+    <g
+       id="g304932"
+       transform="translate(-1.0549115,2.6458334)">
+      <g
+         id="g44753">
+        <path
+           style="fill:#ffffff;stroke:#ffffff;stroke-width:0.15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart-6)"
+           d="M 40.9988,88.906021 V 129.71839"
+           id="path859-5"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:#ffffff;stroke:#ffffff;stroke-width:0.15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend)"
+           d="M -40.199133,129.62984 H 132.77499"
+           id="path859" />
+      </g>
+      <path
+         id="path2842"
+         style="display:inline;fill:none;fill-rule:evenodd;stroke:#cc0000;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 125.66339,129.35617 c -31.108514,0 -29.049644,-0.25769 -32.821424,-0.51584 -14.6256,-1.00101 -21.26337,-9.51008 -27.07373,-17.48143 -7.36732,-10.10738 -12.85353,-20.088739 -19.480312,-20.088739 -6.62678,0 -12.112987,9.981359 -19.480307,20.088739 -5.810361,7.97135 -12.44813,16.48042 -27.0737297,17.48143 -3.771789,0.25815 -1.712918,0.51584 -32.8214203,0.51584"
+         sodipodi:nodetypes="csssssc" />
+      <g
+         id="g23984-0-1"
+         transform="translate(-6.5082107,12.115668)">
+        <path
+           style="fill:#000080;stroke:#00e500;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="M 47.529467,110.81899 H 52.67101"
+           id="path2966-4-7"
+           sodipodi:nodetypes="cc" />
+        <text
+           xml:space="preserve"
+           style="font-size:3.52778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke-width:0.174897"
+           x="48.493336"
+           y="109.68451"
+           id="text13135-4-8"><tspan
+             sodipodi:role="line"
+             id="tspan13133-4-5"
+             style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Norasi;-inkscape-font-specification:Norasi;fill:#00ff00;fill-opacity:1;stroke-width:0.174897"
+             x="48.493336"
+             y="109.68451">vx</tspan></text>
+      </g>
+      <g
+         id="g23984-0-1-6"
+         transform="translate(-21.993396,-18.425048)">
+        <text
+           xml:space="preserve"
+           style="font-size:3.52778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#ff00ff;fill-opacity:1;stroke-width:0.174897"
+           x="83.600334"
+           y="112.72957"
+           id="text13135-4-8-3"><tspan
+             sodipodi:role="line"
+             id="tspan13133-4-5-3"
+             style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Norasi;-inkscape-font-specification:Norasi;fill:#ff00ff;fill-opacity:1;stroke-width:0.174897"
+             x="83.600334"
+             y="112.72957">h</tspan></text>
+      </g>
+      <g
+         id="g50065"
+         transform="translate(-0.21794585)">
+        <g
+           id="g23984-0-5"
+           transform="translate(-0.11284829,9.4068012)"
+           style="fill:#008080">
+          <path
+             style="fill:#008080;stroke:#00b2b2;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="M 47.529467,115.62282 H 77.404534"
+             id="path2966-4-9"
+             sodipodi:nodetypes="cc" />
+          <text
+             xml:space="preserve"
+             style="font-size:3.52778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#00b2b2;fill-opacity:1;stroke-width:0.174897"
+             x="60.003948"
+             y="113.96461"
+             id="text13135-4-6"><tspan
+               sodipodi:role="line"
+               id="tspan13133-4-2"
+               style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Norasi;-inkscape-font-specification:Norasi;fill:#00b2b2;fill-opacity:1;stroke-width:0.174897"
+               x="60.003948"
+               y="113.96461">vy</tspan></text>
+        </g>
+        <g
+           id="g23984-0-5-3"
+           transform="translate(-31.809404,9.4068012)"
+           style="fill:#008080">
+          <path
+             style="fill:#008080;stroke:#00b2b2;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="M 47.529467,115.62282 H 77.404534"
+             id="path2966-4-9-8"
+             sodipodi:nodetypes="cc" />
+          <text
+             xml:space="preserve"
+             style="font-size:3.52778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#00b2b2;fill-opacity:1;stroke-width:0.174897"
+             x="60.003948"
+             y="113.96461"
+             id="text13135-4-6-8"><tspan
+               sodipodi:role="line"
+               id="tspan13133-4-2-3"
+               style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Norasi;-inkscape-font-specification:Norasi;fill:#00b2b2;fill-opacity:1;stroke-width:0.174897"
+               x="60.003948"
+               y="113.96461">vy</tspan></text>
+        </g>
+      </g>
+      <path
+         style="fill:#ff00ff;stroke:#ff00ff;stroke-width:0.305311px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 24.617437,93.252646 c 0.3366,0 35.906648,0 35.906648,0"
+         id="path122977" />
+    </g>
+    <g
+       id="g322678"
+       transform="translate(5.6653125,5.1526619)">
+      <text
+         xml:space="preserve"
+         style="font-size:10.5833px;line-height:0.4;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:0.264583"
+         x="39.730484"
+         y="12.227077"
+         id="text305684"><tspan
+           sodipodi:role="line"
+           style="font-size:10.5833px;text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.264583"
+           x="39.730484"
+           y="12.227077"
+           id="tspan313590">Voting* is rational**</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.74954px;line-height:1;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:0.137477"
+         x="39.581802"
+         y="18.20982"
+         id="text305684-5"><tspan
+           sodipodi:role="line"
+           style="font-size:2.74954px;text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.137477"
+           x="39.581802"
+           y="18.20982"
+           id="tspan313590-1">*in competitive elections  **if you care about other people</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:2.74954px;line-height:1;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:0.137477"
+       x="139.03543"
+       y="9.0821676"
+       id="text305684-5-3"><tspan
+         sodipodi:role="line"
+         style="font-size:2.74954px;text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.137477"
+         x="139.03543"
+         y="9.0821676"
+         id="tspan313590-1-6">@notkavi</tspan></text>
+  </g>
+</svg>
