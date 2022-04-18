@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="572.39795mm"
+   height="294.01096mm"
+   viewBox="0 0 572.39795 294.01096"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (08b2f3d93c, 2022-04-05)"
+   sodipodi:docname="output.svg"
+   inkscape:export-filename="/home/kavi/temp.png"
+   inkscape:export-xdpi="181.76738"
+   inkscape:export-ydpi="181.76738"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.5499273"
+     inkscape:cx="330.95284"
+     inkscape:cy="665.54252"
+     inkscape:window-width="2511"
+     inkscape:window-height="1037"
+     inkscape:window-x="1329"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <g
+       class="clips"
+       id="g827">
+      <clipPath
+         id="clip22a926geo">
+        <rect
+           x="-5.6843419e-14"
+           y="66.92308"
+           width="700"
+           height="366.15384"
+           id="rect824" />
+      </clipPath>
+    </g>
+    <g
+       class="gradients"
+       id="g829" />
+    <g
+       class="patterns"
+       id="g831" />
+    <g
+       class="clips"
+       id="g7110" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(204.82692,-2.4689832)">
+    <rect
+       style="opacity:1;fill:#ffffff;stroke:none;stroke-width:1.82622;stop-color:#000000"
+       id="rect134257"
+       width="572.39795"
+       height="294.01096"
+       x="-204.82692"
+       y="2.4689832" />
+    <g
+       id="g134485">
+      <g
+         id="g40407">
+        <g
+           id="g36009"
+           transform="matrix(1.2504036,0,0,1.2504036,-33.206635,-41.192549)">
+          <image
+             width="127"
+             height="101.59999"
+             preserveAspectRatio="none"
+             xlink:href="out/pvi.png"
+             id="image148731"
+             x="180.45245"
+             y="64.59343"
+             inkscape:svg-dpi="10" />
+          <image
+             width="127"
+             height="101.59999"
+             preserveAspectRatio="none"
+             xlink:href="out/pvi_swing.png"
+             id="image148903"
+             x="180.45245"
+             y="166.19342"
+             inkscape:svg-dpi="10" />
+        </g>
+        <g
+           id="g36013"
+           transform="matrix(1.2504024,0,0,1.2504024,50.076071,-42.685436)">
+          <image
+             width="127"
+             height="101.6"
+             preserveAspectRatio="none"
+             xlink:href="out/margin_swing.png"
+             id="image148471"
+             x="-190.79056"
+             y="167.38742" />
+          <image
+             width="127"
+             height="101.6"
+             preserveAspectRatio="none"
+             xlink:href="out/margin.png"
+             id="image148211"
+             x="-190.79056"
+             y="65.787415"
+             inkscape:svg-dpi="10" />
+        </g>
+        <image
+           preserveAspectRatio="none"
+           inkscape:svg-dpi="960"
+           width="270.02023"
+           height="192.8716"
+           xlink:href="out/map.svg"
+           id="image87796"
+           x="-51.74979"
+           y="5.291616" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:16.2857px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;stroke-width:0.407142"
+         x="-49.77243"
+         y="26.732697"
+         id="text36677"><tspan
+           sodipodi:role="line"
+           id="tspan36675"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Cantarell;-inkscape-font-specification:Cantarell;stroke-width:0.407142"
+           x="-49.77243"
+           y="26.732697">Five Americas: an Electoral Analysis</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:97.4721;stroke-width:0.407142"
+         x="-19.24935"
+         y="188.37251"
+         id="text36677-7"><tspan
+           x="-19.24935"
+           y="188.37251"
+           id="tspan7318"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7316">We can divide America into 5 quintiles of roughly </tspan></tspan><tspan
+           x="-19.24935"
+           y="193.67579"
+           id="tspan7322"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7320">equal population, by density*. Above is a map of </tspan></tspan><tspan
+           x="-19.24935"
+           y="198.97905"
+           id="tspan7326"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7324">which states correspond to each classification.
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="204.28232"
+           id="tspan7330"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7328">
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="209.58559"
+           id="tspan7334"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7332">I would roughly classify these regions as Urban/</tspan></tspan><tspan
+           x="-19.24935"
+           y="214.88886"
+           id="tspan7338"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7336">Dense Suburbs (purple), Suburban (blue), Exurban </tspan></tspan><tspan
+           x="-19.24935"
+           y="220.19213"
+           id="tspan7342"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7340">(cyan), Dense Rural (green), True Rural (red).
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="225.4954"
+           id="tspan7346"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7344">
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="230.79866"
+           id="tspan7350"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7348">Note that most counties and land in the United </tspan></tspan><tspan
+           x="-19.24935"
+           y="236.10193"
+           id="tspan7354"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7352">States are in the True Rural category, but these </tspan></tspan><tspan
+           x="-19.24935"
+           y="241.4052"
+           id="tspan7358"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7356">correspond to the same 20% of the population as </tspan></tspan><tspan
+           x="-19.24935"
+           y="246.70847"
+           id="tspan7362"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7360">the other quintiles.
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="252.01174"
+           id="tspan7366"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7364">
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="257.31501"
+           id="tspan7370"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7368">
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="262.61827"
+           id="tspan7374"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7372">
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="267.92156"
+           id="tspan7378"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7376">
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="273.22484"
+           id="tspan7382"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7380">
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="278.52813"
+           id="tspan7386"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7384">*Uses my alternate density metric (1km). See bit.ly/</tspan></tspan><tspan
+           x="-19.24935"
+           y="283.83141"
+           id="tspan7390"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7388">pop_alt_article</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:97.4721;stroke-width:0.407142"
+         x="-19.24935"
+         y="188.37251"
+         id="text36677-7-5"
+         transform="translate(101.80488)"><tspan
+           x="-19.24935"
+           y="188.37251"
+           id="tspan7394"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7392">The general trends in the margins and PVI of these </tspan></tspan><tspan
+           x="-19.24935"
+           y="193.67579"
+           id="tspan7398"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7396">regions are unsurprising, the more dense an area, </tspan></tspan><tspan
+           x="-19.24935"
+           y="198.97905"
+           id="tspan7402"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7400">the more liberal it gets. However, comparing years </tspan></tspan><tspan
+           x="-19.24935"
+           y="204.28232"
+           id="tspan7406"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7404">shows some interesting results. If we look at PVI we </tspan></tspan><tspan
+           x="-19.24935"
+           y="209.58559"
+           id="tspan7410"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7408">can see that theer's a clear separation between the </tspan></tspan><tspan
+           x="-19.24935"
+           y="214.88886"
+           id="tspan7414"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7412">Obama elections and the post-Obama elections in </tspan></tspan><tspan
+           x="-19.24935"
+           y="220.19213"
+           id="tspan7418"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7416">both the rural and suburban parts of this country, in </tspan></tspan><tspan
+           x="-19.24935"
+           y="225.4954"
+           id="tspan7422"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7420">opposite directions. This makes sense, as 2016 was </tspan></tspan><tspan
+           x="-19.24935"
+           y="230.79866"
+           id="tspan7426"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7424">something of a realignment election.
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="236.10193"
+           id="tspan7430"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7428">
+</tspan></tspan><tspan
+           x="-19.24935"
+           y="241.4052"
+           id="tspan7434"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7432">It is also interesting to look at the PVI swings. The </tspan></tspan><tspan
+           x="-19.24935"
+           y="246.70847"
+           id="tspan7438"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7436">2012 and 2016 elections follow a predictable </tspan></tspan><tspan
+           x="-19.24935"
+           y="252.01174"
+           id="tspan7442"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7440">pattern, with the rural areas drifting rightward and </tspan></tspan><tspan
+           x="-19.24935"
+           y="257.31501"
+           id="tspan7446"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7444">suburbs/urban areas drifting left. However, in the </tspan></tspan><tspan
+           x="-19.24935"
+           y="262.61827"
+           id="tspan7450"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7448">2020 election, we see an interesting phenomenon </tspan></tspan><tspan
+           x="-19.24935"
+           y="267.92156"
+           id="tspan7454"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7452">where both rural and urban areas move right as </tspan></tspan><tspan
+           x="-19.24935"
+           y="273.22484"
+           id="tspan7458"><tspan
+             style="font-family:Cantarell;-inkscape-font-specification:Cantarell"
+             id="tspan7456">suburban areas move left. </tspan></tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:6.36921px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;stroke-width:0.15923"
+       x="338.37808"
+       y="10.086706"
+       id="text36677-6"><tspan
+         sodipodi:role="line"
+         id="tspan36675-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Cantarell;-inkscape-font-specification:Cantarell;stroke-width:0.15923"
+         x="338.37808"
+         y="10.086706">@notkavi</tspan></text>
+  </g>
+</svg>
