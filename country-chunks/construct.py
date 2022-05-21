@@ -8,22 +8,30 @@ import tqdm.auto as tqdm
 import shapely
 
 import wquantiles
-from permacache import permacache
+from permacache import permacache, drop_if_equal
 
 terr = {"78", "72", "69", "66", "60", "11"}
+
+
+def state(x):
+    return x.split("US")[1][:2]
 
 
 def usa():
     csv = pd.read_csv("/home/kavi/temp/census_downloaded/usa.csv")
     csv = csv[csv.INTPTLON < 0].copy()
-    csv = csv[csv.GEOID.apply(lambda x: x.split("US")[1][:2] not in terr)]
+    csv = csv[csv.GEOID.apply(lambda x: state(x) not in terr)]
     return csv
 
 
-@permacache("construct/shapefile")
-def shapefile():
+@permacache("construct/shapefile", key_function=dict(state_filter=drop_if_equal(None)))
+def shapefile(state_filter=None):
     sh = gpd.read_file("shapefiles/cb_2018_us_state_500k.shp")
-    sh = sh[sh.GEOID.apply(lambda x: x not in terr)]
+    sh = sh[
+        sh.GEOID.apply(
+            lambda x: x not in terr if state_filter is None else x == state_filter
+        )
+    ]
     sh = shapely.ops.unary_union(list(sh.geometry))
     return sh.intersection(shapely.geometry.box(-180, 0, 0, 90))
 
@@ -58,28 +66,28 @@ def split_slabs(*, universe, table, direction, split_points):
     return dict(slabs=slabs, tables=tables)
 
 
-def table_of_slabs(*, universe, table, rows, columns):
-    sh = shapefile()
-    chunks = []
-    counts = []
-    result = split_slabs(
-        universe=universe,
-        table=table,
-        num_splits=np.linspace(0, 1, rows + 1)[1:-1],
-        direction="y",
-    )
-    for slab, table in zip(result["slabs"], result["tables"]):
-        row = split_slabs(
-            universe=slab,
-            table=table,
-            num_splits=np.linspace(0, 1, columns + 1)[1:-1],
-            direction="x",
-        )
-        for chunk, t in zip(row["slabs"], row["tables"]):
-            chunks.append(chunk)
-            counts.append(t.sum().POP100)
-    chunks = [chunk.intersection(sh) for chunk in chunks]
-    return chunks
+# def table_of_slabs(*, universe, table, rows, columns, state_filter=None):
+#     sh = shapefile(state_filter=state_filter)
+#     chunks = []
+#     counts = []
+#     result = split_slabs(
+#         universe=universe,
+#         table=table,
+#         num_splits=np.linspace(0, 1, rows + 1)[1:-1],
+#         direction="y",
+#     )
+#     for slab, table in zip(result["slabs"], result["tables"]):
+#         row = split_slabs(
+#             universe=slab,
+#             table=table,
+#             num_splits=np.linspace(0, 1, columns + 1)[1:-1],
+#             direction="x",
+#         )
+#         for chunk, t in zip(row["slabs"], row["tables"]):
+#             chunks.append(chunk)
+#             counts.append(t.sum().POP100)
+#     chunks = [chunk.intersection(sh) for chunk in chunks]
+#     return chunks
 
 
 def res_up(chunk):
@@ -146,10 +154,13 @@ def margin(chunk):
     result = (votes.D - votes.R) / votes.sum()
     return 0 if np.isnan(result) else result
 
-@permacache("construct/produce_map")
-def produce_map(amount, seed):
+
+@permacache("construct/produce_map_2")
+def produce_map(amount, seed, state_filter=None):
     us = usa()
-    universe = shapefile()
+    if state_filter is not None:
+        us = us[us.GEOID.apply(lambda x: state(x) == state_filter)]
+    universe = shapefile(state_filter=state_filter)
 
     chunks, tables = zip(
         *tqdm.tqdm(
@@ -172,8 +183,8 @@ def produce_map(amount, seed):
     return frame
 
 
-def export_map(amount, plan):
-    frame = produce_map(amount, plan)
+def export_map(amount, plan, *, prefix, layout, **kwargs):
+    frame = produce_map(amount, plan, **kwargs)
     plan = str(plan)
     margins = np.array(frame.margin)
     biden, trump = (np.array(margins) > 0).sum(), (np.array(margins) < 0).sum()
@@ -183,7 +194,6 @@ def export_map(amount, plan):
         if median_district > 0
         else f"R+{-median_district:.2f}"
     )
-    layout = dict(partisanship="Partisanship", atlas="Main")
     frame.to_file("temp/temp.shp")
     with open(f"out/{amount}_{plan}.geojson", "w") as f:
         f.write(frame.to_json())
@@ -196,16 +206,44 @@ def export_map(amount, plan):
                 layout[typ],
                 f"{margins.shape[0]} districts, {biden} Biden - {trump} Trump, median: {partisanship}",
                 f"{plan}",
-                f"out/{typ}_{amount}_{plan}.png",
+                f"out/{prefix}{typ}_{amount}_{plan}.png",
             ]
         )
 
 
-def main():
-    for plan in range(1, 5):
-        export_map(435 if plan % 2 == 1 else 1000, plan)
-        
+def main(mode):
+    if mode == "usa":
+        for plan in range(1, 5):
+            export_map(
+                435 if plan % 2 == 1 else 1000,
+                plan,
+                prefix="",
+                layout=dict(partisanship="Partisanship", atlas="Main"),
+            )
+    elif mode == "ny":
+        for plan in range(1, 3):
+            export_map(
+                26,
+                plan,
+                prefix="ny_",
+                state_filter="36",
+                layout=dict(partisanship="Partisanship NY", atlas="Main NY"),
+            )
+            export_map(
+                63,
+                plan,
+                prefix="ny_senate_",
+                state_filter="36",
+                layout=dict(partisanship="Partisanship NY", atlas="Main NY"),
+            )
+            export_map(
+                150,
+                plan,
+                prefix="ny_house_",
+                state_filter="36",
+                layout=dict(partisanship="Partisanship NY", atlas="Main NY"),
+            )
 
 
 if __name__ == "__main__":
-    main()
+    main("ny")
