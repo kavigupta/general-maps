@@ -6,10 +6,9 @@ def precinct_label(row):
     margin = row.D - row.R
     margin = margin / total
     if margin < 0:
-        return f'<div class="text gop_precinct">Precinct Margin: R+{-margin:.2%}</div>'
+        return f'<div class="text gop_precinct">Precinct Margin: R+{-margin:.0%}</div>'
     else:
-        return f'<div class="text dem_precinct">Precinct Margin: D+{margin:.2%}</div>'
-    return ""
+        return f'<div class="text dem_precinct">Precinct Margin: D+{margin:.0%}</div>'
 
 
 def render_degree(val, dirs):
@@ -37,17 +36,29 @@ def render_voter(row, idx):
 
 
 def render_row(idx, row):
-    x, y = row.x, row.y
+    x, y = row.ox, row.oy
     return f"""
-    <h2 class="text">Voter {idx + 1}'s Neighborhood</h2>
+    <td style="width: 50%;">
+        <h2 class="text">Voter {idx + 1}'s Neighborhood</h2>
 
-    {render_voter(row, idx)}
-    <div class="text coordinate"> {render_coordinate(row)}</div>
-    <div class="text address"><i>approx.</i> {reverse_geocode(row.x, row.y)}</div>
-    {precinct_label(row)}
-    <div class="fill">
-        <a href="https://maps.google.com/?q={y},{x}&ll={y},{x}&z=8" target="_blank">
-            <image src="images/{idx}.png"/>
-        </a>
-    </div>
+        <!-- {render_voter(row, idx)} -->
+        <div class="text coordinate"> {render_coordinate(row)}</div>
+        <div class="text address"><i>approx.</i> {reverse_geocode(row.x, row.y)}</div>
+        {precinct_label(row)}
+        <div class="fill">
+            <a href="https://maps.google.com/?q={y},{x}&ll={y},{x}&z=8" target="_blank">
+                <image src="images/{idx}.png"/>
+            </a>
+        </div>
+    </td>
     """
+
+def render_full_table(selection):
+    result = []
+    for idx in range(len(selection)):
+        row = selection.iloc[idx]
+        if row.selected_party == "D":
+            result.append([])
+        result[-1].append(render_row(idx, row))
+    result = ["<tr>" + "\n".join(x) + "</tr>" for x in result]
+    return "\n".join(result)

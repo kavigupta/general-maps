@@ -4,8 +4,12 @@ import numpy as np
 from downloader import refine_location
 
 
+def get_precincts():
+    return pd.read_csv("/home/kavi/full-usa-precinct-map/out/centroids.csv")
+
+
 def load_data(total_samples):
-    precincts = pd.read_csv("/home/kavi/full-usa-precinct-map/out/centroids.csv")
+    precincts = get_precincts()
     overall = precincts[["R", "D"]].sum()
     samples_each = (total_samples / overall.sum() * overall).round()
 
@@ -18,6 +22,8 @@ def load_data(total_samples):
         )
         selected_precincts = precincts.iloc[samples].copy()
         selected_precincts["selected_party"] = [sample_column] * len(selected_precincts)
+        selected_precincts["ox"] = selected_precincts.x
+        selected_precincts["oy"] = selected_precincts.y
         return selected_precincts.copy()
 
     to_interleave = [
