@@ -1,0 +1,90 @@
+<html>
+<body>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.fill a {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+
+.fill a img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+h1 {
+    font-family:courier;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-family:courier;
+    margin-bottom: 0px;
+}
+
+.text {
+    font-family:courier;
+    text-align: center;
+}
+
+.dem_precinct {
+    font-size: 125%;
+    color: #26f;
+    font-weight: bold;
+}
+
+.gop_precinct {
+    font-size: 125%;
+    color: #f62;
+    font-weight: bold;
+}
+
+.dem_voter {
+    font-size: 100%;
+    color: #26f;
+    font-style: italic;
+}
+
+.gop_voter {
+    font-size: 100%;
+    color: #f62;
+    font-style: italic;
+}
+
+.coordinate {
+    font-size: 100%;
+}
+
+.address {
+    font-size: 85%;
+}
+
+</style>
+<div class="row">
+  <div class="column">$D</div>
+  <div class="column">$R</div>
+</div>
+</body>
+</html>
