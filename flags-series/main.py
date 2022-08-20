@@ -43,12 +43,16 @@ def kavis_tweet(id):
 
 
 def tweet_image(tweets_table, api, *, png_path, index, name, description):
-    reply_to = tweet_to_reply_to(tweets_table, index)
+    root_tweet, reply_to = tweet_to_reply_to(tweets_table, 1), tweet_to_reply_to(tweets_table, index)
     status = f"{NAME} {index}: {name}\n\n{description}"
     main_tweet = api.update_with_media(png_path, status=status)
     thread_tweet = api.update_status(
         f"{NAME} {index}: {name}\n" + kavis_tweet(main_tweet.id),
         in_reply_to_status_id=reply_to,
+    )
+    api.update_status(
+        status=f"Follow the rest of the series here!\n" + kavis_tweet(root_tweet),
+        in_reply_to_status_id=main_tweet.id,
     )
     return main_tweet.id, thread_tweet.id
 
