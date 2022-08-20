@@ -11,13 +11,13 @@ import pandas as pd
 
 from secret import *
 
-NAME = "Flagration"
+NAME = "Flag Ration"
 
 ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
 
 GITHUB_PATH = "https://github.com/kavigupta/general-maps/blob/master/flags-series/"
 
-TIME_TO_PUBLISH = "04:00"
+TIME_TO_PUBLISH = "15:00"
 
 TZ = pytz.timezone("America/New_York")
 
@@ -44,10 +44,10 @@ def kavis_tweet(id):
 
 def tweet_image(tweets_table, api, *, png_path, index, name, description):
     reply_to = tweet_to_reply_to(tweets_table, index)
-    status = f"{NAME} Episode {index}: {name}\n\n{description}"
+    status = f"{NAME} {index}: {name}\n\n{description}"
     main_tweet = api.update_with_media(png_path, status=status)
     thread_tweet = api.update_status(
-        f"{NAME} Episode {index}: {name}\n" + kavis_tweet(main_tweet.id),
+        f"{NAME} {index}: {name}\n" + kavis_tweet(main_tweet.id),
         in_reply_to_status_id=reply_to,
     )
     return main_tweet.id, thread_tweet.id
@@ -117,7 +117,7 @@ def run_for_row(twitter_api, tweets_sheet, row):
     full_list = gspread.service_account().open("Full list of maps and flags")
     full_list.sheet1.append_row(
         [
-            f"{NAME} Episode {index}: {name}",
+            f"{NAME} {index}: {name}",
             int(index),
             row["Date"],
             "Flag redesign",
