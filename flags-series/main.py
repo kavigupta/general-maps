@@ -16,7 +16,7 @@ ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
 
 GITHUB_PATH = "https://github.com/kavigupta/general-maps/blob/master/flags-series/"
 
-TIME_TO_PUBLISH = "13:00"
+TIME_TO_PUBLISH = "04:00"
 
 
 def render_image(file_name):
