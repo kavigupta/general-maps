@@ -5,6 +5,7 @@ import tempfile
 
 import gspread
 import tweepy
+import pytz
 
 import pandas as pd
 
@@ -17,6 +18,8 @@ ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
 GITHUB_PATH = "https://github.com/kavigupta/general-maps/blob/master/flags-series/"
 
 TIME_TO_PUBLISH = "04:00"
+
+TZ = pytz.timezone("America/New_York")
 
 
 def render_image(file_name):
@@ -76,15 +79,24 @@ def update_tweets_table(tweets_sheet, *, update_index, main_tweet, thread_tweet)
 
 
 def get_time_to_publish(row):
-    return datetime.datetime.strptime(
-        row["Date"] + " " + TIME_TO_PUBLISH, "%Y-%m-%d %H:%M"
+    return TZ.localize(
+        datetime.datetime.strptime(
+            row["Date"] + " " + TIME_TO_PUBLISH, "%Y-%m-%d %H:%M"
+        )
     )
 
 
 def run_for_row(twitter_api, tweets_sheet, row):
-    if datetime.datetime.now() - get_time_to_publish(row) <= datetime.timedelta(0):
+    current_time = datetime.datetime.now(TZ)
+    time_to_publish = get_time_to_publish(row)
+    delta = current_time - time_to_publish
+    print(delta)
+    1 / 0
+    if delta <= datetime.timedelta(0):
         return
     png_path = render_image(row["Flag path"])
+
+    print("Image made")
 
     index, name, description = row["Index"], row["Flag name"], row["Flag description"]
 
@@ -130,11 +142,16 @@ def gather_row(tweets_table):
 
 
 def main():
+
+    print("Starting")
     tweets_sheet = gspread.service_account().open(NAME).sheet1
     row = gather_row(read_tweets_table(tweets_sheet))
 
     if row is None:
         return
+
+    print("Running for row")
+    print(row)
 
     my_auth = tweepy.OAuthHandler(my_consumer_key, my_consumer_secret)
     my_auth.set_access_token(my_access_token, my_access_token_secret)
