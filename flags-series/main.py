@@ -90,8 +90,6 @@ def run_for_row(twitter_api, tweets_sheet, row):
     current_time = datetime.datetime.now(TZ)
     time_to_publish = get_time_to_publish(row)
     delta = current_time - time_to_publish
-    print(delta)
-    1 / 0
     if delta <= datetime.timedelta(0):
         return
     png_path = render_image(row["Flag path"])
