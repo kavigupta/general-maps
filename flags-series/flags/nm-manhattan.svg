@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="317.5mm"
+   height="211.66666mm"
+   viewBox="0 0 317.5 211.66666"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="nm-manhattan.svg">
+  <defs
+     id="defs2">
+    <mask
+       height="6"
+       width="6"
+       y="-3"
+       x="-3"
+       maskUnits="userSpaceOnUse"
+       id="c">
+      <circle
+         id="circle858"
+         r="1.625"
+         cx="0"
+         cy="0"
+         style="fill:none;stroke:#ffffff;stroke-width:1.75" />
+    </mask>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="606.06893"
+     inkscape:cy="424.46708"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1884"
+     inkscape:window-height="1037"
+     inkscape:window-x="1956"
+     inkscape:window-y="1086"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(246.16726,-43.121273)">
+    <g
+       id="g856"
+       transform="matrix(0.26458333,0,0,0.26458333,-246.16726,43.121273)">
+      <rect
+         id="rect834"
+         height="800"
+         width="1200"
+         x="0"
+         y="0"
+         style="fill:#ffd700" />
+      <g
+         id="g841"
+         transform="translate(600,400)"
+         style="stroke:#bf0a30">
+        <circle
+           id="circle839"
+           r="183.74626"
+           cx="1.1368684e-13"
+           cy="4.1947485e-05"
+           style="fill:#ffd700;stroke-width:30.35652542" />
+      </g>
+    </g>
+    <circle
+       style="fill:#bf0a30;fill-opacity:1;stroke-width:12.76428032"
+       cy="148.95462"
+       cx="-87.417252"
+       r="6.3821402"
+       id="circle865" />
+    <g
+       style="fill:#bf0a30;fill-opacity:1"
+       mask="url(#c)"
+       id="g875"
+       transform="matrix(12.76428,0,0,12.76428,-87.417259,148.95463)">
+      <g
+         style="fill:#bf0a30;fill-opacity:1"
+         id="a">
+        <path
+           style="fill:#bf0a30;fill-opacity:1"
+           inkscape:connector-curvature="0"
+           id="b"
+           transform="rotate(30)"
+           d="M 0,0 V 2.88 H 3" />
+        <use
+           style="fill:#bf0a30;fill-opacity:1"
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           transform="scale(-1,1)"
+           xlink:href="#b"
+           id="use868" />
+      </g>
+      <use
+         style="fill:#bf0a30;fill-opacity:1"
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         transform="rotate(120)"
+         xlink:href="#a"
+         id="use871" />
+      <use
+         style="fill:#bf0a30;fill-opacity:1"
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         transform="rotate(-120)"
+         xlink:href="#a"
+         id="use873" />
+    </g>
+  </g>
+</svg>
