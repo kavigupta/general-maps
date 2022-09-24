@@ -15,7 +15,9 @@ NAME = "Flag Ration"
 
 ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
 
-GITHUB_PATH = "https://github.com/kavigupta/general-maps/blob/master/flags-series/"
+GITHUB_PATH = (
+    "https://github.com/kavigupta/general-maps/blob/{hash}/flags-series/flags/"
+)
 
 TIME_TO_PUBLISH = "15:00"
 
@@ -43,7 +45,9 @@ def kavis_tweet(id):
 
 
 def tweet_image(tweets_table, api, *, png_path, index, name, description):
-    root_tweet, reply_to = tweet_to_reply_to(tweets_table, 1), tweet_to_reply_to(tweets_table, index)
+    root_tweet, reply_to = tweet_to_reply_to(tweets_table, 1), tweet_to_reply_to(
+        tweets_table, index
+    )
     status = f"{NAME} {index}: {name}\n\n{description}"
     main_tweet = api.update_with_media(png_path, status=status)
     thread_tweet = api.update_status(
@@ -126,7 +130,12 @@ def run_for_row(twitter_api, tweets_sheet, row):
             row["Date"],
             "Flag redesign",
             NAME,
-            GITHUB_PATH + row["Flag path"],
+            GITHUB_PATH.format(
+                hash=subprocess.check_output(["git", "rev-parse", "HEAD"]).decode(
+                    "utf-8"
+                )
+            )
+            + row["Flag path"],
             kavis_tweet(main_tweet),
         ]
     )
