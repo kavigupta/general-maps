@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="326.76041mm"
+   height="171.97917mm"
+   viewBox="0 0 326.76041 171.97917"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="usa-atlas-colors.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="903.20548"
+     inkscape:cy="596.6214"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g1093"
+     showgrid="false"
+     inkscape:window-width="1884"
+     inkscape:window-height="1037"
+     inkscape:window-x="1956"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-168.83771,-56.808431)">
+    <g
+       id="g1093"
+       transform="matrix(0.26458333,0,0,0.26458333,-65.479134,172.20576)">
+      <g
+         id="g1171"
+         transform="matrix(0.16666667,0,0,0.16666667,885.60698,-436.14739)">
+        <rect
+           id="rect1114"
+           height="3900"
+           width="7410"
+           x="0"
+           y="0"
+           style="fill:#3c3b6e;fill-opacity:1" />
+        <path
+           id="path1116"
+           d="m 0,450 h 7410 m 0,600 H 0 m 0,600 h 7410 m 0,600 H 0 m 0,600 h 7410 m 0,600 H 0"
+           inkscape:connector-curvature="0"
+           style="stroke:#ffffff;stroke-width:300" />
+        <rect
+           id="rect1118"
+           height="2100"
+           width="2964"
+           x="0"
+           y="0"
+           style="fill:#b22234;fill-opacity:1" />
+        <g
+           id="g1143"
+           style="fill:#ffffff">
+          <g
+             id="s18">
+            <g
+               id="s9">
+              <g
+                 id="s5">
+                <g
+                   id="s4">
+                  <path
+                     d="M 247,90 317.53423,307.08204 132.87322,172.91796 H 361.12678 L 176.46577,307.08204 Z"
+                     id="s"
+                     inkscape:connector-curvature="0" />
+                  <use
+                     id="use1121"
+                     y="420"
+                     xlink:href="#s"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     id="use1123"
+                     y="840"
+                     xlink:href="#s"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                  <use
+                     id="use1125"
+                     y="1260"
+                     xlink:href="#s"
+                     x="0"
+                     width="100%"
+                     height="100%" />
+                </g>
+                <use
+                   id="use1128"
+                   y="1680"
+                   xlink:href="#s"
+                   x="0"
+                   width="100%"
+                   height="100%" />
+              </g>
+              <use
+                 id="use1131"
+                 y="210"
+                 x="247"
+                 xlink:href="#s4"
+                 width="100%"
+                 height="100%" />
+            </g>
+            <use
+               id="use1134"
+               x="494"
+               xlink:href="#s9"
+               y="0"
+               width="100%"
+               height="100%" />
+          </g>
+          <use
+             id="use1137"
+             x="988"
+             xlink:href="#s18"
+             y="0"
+             width="100%"
+             height="100%" />
+          <use
+             id="use1139"
+             x="1976"
+             xlink:href="#s9"
+             y="0"
+             width="100%"
+             height="100%" />
+          <use
+             id="use1141"
+             x="2470"
+             xlink:href="#s5"
+             y="0"
+             width="100%"
+             height="100%" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
