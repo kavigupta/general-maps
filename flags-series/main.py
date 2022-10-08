@@ -133,7 +133,7 @@ def run_for_row(twitter_api, tweets_sheet, row):
             GITHUB_PATH.format(
                 hash=subprocess.check_output(["git", "rev-parse", "HEAD"]).decode(
                     "utf-8"
-                )
+                ).strip()
             )
             + row["Flag path"],
             kavis_tweet(main_tweet),
