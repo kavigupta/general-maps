@@ -41,11 +41,11 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.6017536"
-     inkscape:cx="347.41479"
-     inkscape:cy="446.24393"
-     inkscape:window-width="3768"
-     inkscape:window-height="2096"
+     inkscape:zoom="0.56630542"
+     inkscape:cx="563.76655"
+     inkscape:cy="777.75312"
+     inkscape:window-width="1848"
+     inkscape:window-height="1016"
      inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -183,7 +183,7 @@
            inkscape:connector-curvature="0" />
         <polygon
            style="fill:#f2ebd9"
-           points="64.976,387.318 40.264,447.334 64.656,471.726 124.672,447.013 "
+           points="64.656,471.726 124.672,447.013 64.976,387.318 40.264,447.334 "
            id="polygon67109" />
         <path
            style="fill:#ff9d49"
@@ -199,7 +199,7 @@
            inkscape:connector-curvature="0" />
         <polygon
            style="fill:#000000"
-           points="23.19,488.799 48.288,478.465 33.525,463.701 "
+           points="33.525,463.701 23.19,488.799 48.288,478.465 "
            id="polygon67115" />
         <path
            style="fill:#000000;stroke:#000000"
