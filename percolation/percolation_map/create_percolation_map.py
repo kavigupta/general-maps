@@ -28,7 +28,7 @@ def create_graph(w, h, seed, *, p=0.5, topology):
         g.add_edge(to_idx(w, x, y), to_idx(w, x + 1, y))
     for x, y in zip(*np.where(ver)):
         g.add_edge(to_idx(w, x, y), to_idx(w, x, y + 1))
-    
+
     topology.add_edges(w, h, g)
     return g
 
