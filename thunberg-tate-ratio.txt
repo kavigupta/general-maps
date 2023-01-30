@@ -1,0 +1,31 @@
+{{User sandbox}}
+<!-- EDIT BELOW THIS LINE -->
+
+{{short description|Successful Allied invasion of Nazi-held western Europe in World War II}}
+{{for|the [[Vietnam War]] operation|Battle of Long Khánh}}
+{{redirect|Normandy campaign|the 13th-century campaigns|French invasion of Normandy (1202–1204)}}
+{{Use dmy dates|date=May 2022}}
+{{Use British English|date=April 2014}}
+{{Infobox military conflict
+| conflict          = Thunberg-Tate Ratio
+| partof            = the [[Western Front (World War II)|Gender Front]] and [[Western Front (World War II)|Climate Front]] of [[World War II|The Culture War]]
+| image             = File:Glastonbury2022 (218 of 413) (52182434551) (cropped) (cropped).jpg
+| image_size        = 300px
+| caption           = [[Greta Thunberg]], the winner of the conflict
+| date              = December 27nd&nbsp;–?
+| place             = [[Twitter]], [[Romania]]
+| result            = Lib Victory
+| combatant1        = {{plainlist |
+* '''[[Allies of World War II|Libs]]'''
+* {{flagdeco|Germany}} [[Greta Thunberg]]
+* {{flag|Romania}}
+* {{flag|EU}}
+* {{flagdeco|CSA}} [[Richard Spencer]]
+}}
+| combatant2        = '''[[Axis powers|Cons]]'''<br>{{flagdeco|UK}} [[Andrew Tate]]<br>{{flagdeco|Afghanistan}} [[Taliban]]<br>{{flagdeco|Russia}} [[Sameera Khan]]<br>{{flagdeco|US}} [[Lux Alptraum]]
+| casualties1       = None
+| casualties2       = {{plainlist |
+* 1 person captured
+}}
+}}
+
