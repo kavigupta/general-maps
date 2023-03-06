@@ -1,4 +1,5 @@
 from functools import lru_cache
+import json
 
 import us
 import subprocess
@@ -13,7 +14,58 @@ from permacache import permacache, drop_if_equal
 
 terr = {"78", "72", "69", "66", "60", "11"}
 
-counts = {'Alabama': '7', 'Alaska': '1', 'Arizona': '9', 'Arkansas': '4', 'California': '52', 'Colorado': '8', 'Connecticut': '5', 'Delaware': '1', 'Florida': '28', 'Georgia': '14', 'Hawaii': '2', 'Idaho': '2', 'Illinois': '17', 'Indiana': '9', 'Iowa': '4', 'Kansas': '4', 'Kentucky': '6', 'Louisiana': '6', 'Maine': '2', 'Maryland': '8', 'Massachusetts': '9', 'Michigan': '13', 'Minnesota': '8', 'Mississippi': '4', 'Missouri': '8', 'Montana': '2', 'Nebraska': '3', 'Nevada': '4', 'New Hampshire': '2', 'New Jersey': '12', 'New Mexico': '3', 'New York': '26', 'North Carolina': '14', 'North Dakota': '1', 'Ohio': '15', 'Oklahoma': '5', 'Oregon': '6', 'Pennsylvania': '17', 'Rhode Island': '2', 'South Carolina': '7', 'South Dakota': '1', 'Tennessee': '9', 'Texas': '38', 'Utah': '4', 'Vermont': '1', 'Virginia': '11', 'Washington': '10', 'West Virginia': '2', 'Wisconsin': '8', 'Wyoming': '1'}
+counts = {
+    "Alabama": "7",
+    "Alaska": "1",
+    "Arizona": "9",
+    "Arkansas": "4",
+    "California": "52",
+    "Colorado": "8",
+    "Connecticut": "5",
+    "Delaware": "1",
+    "Florida": "28",
+    "Georgia": "14",
+    "Hawaii": "2",
+    "Idaho": "2",
+    "Illinois": "17",
+    "Indiana": "9",
+    "Iowa": "4",
+    "Kansas": "4",
+    "Kentucky": "6",
+    "Louisiana": "6",
+    "Maine": "2",
+    "Maryland": "8",
+    "Massachusetts": "9",
+    "Michigan": "13",
+    "Minnesota": "8",
+    "Mississippi": "4",
+    "Missouri": "8",
+    "Montana": "2",
+    "Nebraska": "3",
+    "Nevada": "4",
+    "New Hampshire": "2",
+    "New Jersey": "12",
+    "New Mexico": "3",
+    "New York": "26",
+    "North Carolina": "14",
+    "North Dakota": "1",
+    "Ohio": "15",
+    "Oklahoma": "5",
+    "Oregon": "6",
+    "Pennsylvania": "17",
+    "Rhode Island": "2",
+    "South Carolina": "7",
+    "South Dakota": "1",
+    "Tennessee": "9",
+    "Texas": "38",
+    "Utah": "4",
+    "Vermont": "1",
+    "Virginia": "11",
+    "Washington": "10",
+    "West Virginia": "2",
+    "Wisconsin": "8",
+    "Wyoming": "1",
+}
 
 
 def state(x):
@@ -192,6 +244,10 @@ def export_map(amount, plan, *, prefix, layout, no_img=False, **kwargs):
     frame = produce_map(amount, plan, **kwargs)
     if no_img:
         return frame
+    return do_export(frame=frame, amount=amount, layout=layout, prefix=prefix, plan=plan)
+
+
+def do_export(*, frame, amount, layout, prefix, plan):
     plan = str(plan)
     margins = np.array(frame.margin)
     biden, trump = (np.array(margins) > 0).sum(), (np.array(margins) < 0).sum()
@@ -204,7 +260,7 @@ def export_map(amount, plan, *, prefix, layout, no_img=False, **kwargs):
     frame.to_file("/home/kavi/temp/temp.shp")
     with open(f"out/{amount}_{plan}.geojson", "w") as f:
         f.write(frame.to_json())
-        
+
     for typ in layout:
         print(amount, plan, typ)
         subprocess.check_call(
@@ -217,8 +273,9 @@ def export_map(amount, plan, *, prefix, layout, no_img=False, **kwargs):
                 f"out/{prefix}{typ}_{amount}_{plan}.png",
             ]
         )
-        
+
     return frame
+
 
 def standard(state, n_d, plan=1, **kwargs):
     fips = us.states.lookup(state).fips
@@ -227,9 +284,12 @@ def standard(state, n_d, plan=1, **kwargs):
         plan,
         prefix=f"{state}_",
         state_filter=fips,
-        layout=dict(partisanship=f"Partisanship {state.upper()}", atlas=f"Main {state.upper()}"),
+        layout=dict(
+            partisanship=f"Partisanship {state.upper()}", atlas=f"Main {state.upper()}"
+        ),
         **kwargs,
     )
+
 
 @permacache("construct/margins")
 def margins(state, n_d, plan):
@@ -239,10 +299,42 @@ def margins(state, n_d, plan):
         plan,
         prefix=f"{state}_",
         state_filter=fips,
-        layout=dict(partisanship=f"Partisanship {state.upper()}", atlas=f"Main {state.upper()}"),
+        layout=dict(
+            partisanship=f"Partisanship {state.upper()}", atlas=f"Main {state.upper()}"
+        ),
         no_img=True,
     ).margin
     return [float(x) for x in x]
+
+def congressional_map(plan):
+    if isinstance(plan, str):
+        plan_name = plan
+        with open(f"out/{plan}.json") as f:
+            plan = json.load(f)
+    else:
+        assert plan == 1
+        plan_name = "1"
+        plan = {}
+    frame = pd.concat(
+        [
+            export_map(
+                int(counts[state.name]),
+                plan=plan.get(state.abbr, 1),
+                layout=None,
+                no_img=True,
+                prefix=None,
+                state_filter=state.fips,
+            )
+            for state in tqdm.tqdm(us.states.STATES)
+        ]
+    ).reset_index()
+    do_export(
+        frame=frame,
+        amount=435,
+        layout=dict(partisanship="Partisanship", atlas="Main"),
+        prefix="by_state",
+        plan=plan_name,
+    )
 
 def main(mode):
     if mode == "usa":
@@ -302,9 +394,13 @@ def main(mode):
                     results[plan][f"{state.abbr}-{i + 1}"] = x[i]
             with open("out/congressional_test.json", "w") as f:
                 import json
+
                 json.dump(results, f)
+    elif mode == "congressional_map":
+        congressional_map("best_gop")
     else:
         standard(mode, 400)
 
+
 if __name__ == "__main__":
-    main("congressional_test")
+    main("congressional_map")
